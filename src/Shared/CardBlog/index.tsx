@@ -2,7 +2,7 @@ import React, { FunctionComponent } from "react";
 import { Badget, Color } from "../Badget";
 import './CardBlog.css';
 
-type BadgetProps = {
+type CardBlogProps = {
   comment: string;
   color: Color;
   date: string;
@@ -12,7 +12,7 @@ type BadgetProps = {
   title: string;
 };
 
-export const CardBlog: FunctionComponent<BadgetProps> = ({comment, color, date, description, header, share, title}) => {
+export const CardBlog: FunctionComponent<CardBlogProps> = ({comment, color, date, description, header, share, title}) => {
   return (
     <div className="ui link cards">
     <div className="card">
