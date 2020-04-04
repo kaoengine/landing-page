@@ -9,7 +9,7 @@ export enum Color {
 
 type BadgetProps = {
   title: string;
-  color: Color;
+  color?: Color;
 };
 
 const badgetStyle = {
