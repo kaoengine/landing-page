@@ -10,7 +10,10 @@ class CardBox extends React.Component{
         return(
            <div style={{marginLeft: '30px'}}>
                 <HeaderTitle/>
-                <Card />
+                <div>
+                    <Card/>
+                </div>
+                
                 <ImageProduct />
            </div>
         )

@@ -1,6 +1,9 @@
 import * as React from 'react';
+import Swiper from "swiper"; 
+import "swiper/css/swiper.css";
+import 'swiper/js/swiper.min.js'
+
 import HeaderTitle from '../Header/HeaderTitle'
-import Slider from 'react-slick';
 
 const photos = [
     {
@@ -21,27 +24,37 @@ const photos = [
     }
 ]
 class Carousel extends React.Component{
+    state = {swiper: ''}
+    componentDidMount = () => {
+        const swiper = new Swiper('.swiper-container', {
+            slidesPerView: 4,
+            centeredSlides: true,
+            spaceBetween: 30,
+            grabCursor: true,
+            pagination: {
+              el: '.swiper-pagination',
+              clickable: true,
+            },
+          });
+        return swiper;
+    }
     public render(){
-        const settings = {
-            dots: true,
-            infinite: true,
-            speed: 500,
-            slidesToShow: 1,
-            slidesToScroll: 1,
-            className:'slides'
-        }
         return(
             <div className="App">
                 <HeaderTitle />
-                <Slider {...settings}>
-                    {photos.map(photo=>{
+                <div className="swiper-container">
+                    <div className="swiper-wrapper">
+                    {photos.map((photo,index)=>{
                         return(
-                            <div>
-                                <img style={{width:'200px',height:'300px'}} src={photo.url} alt={photo.name}/>
+                            <div key={index} className="swiper-slide">
+                                <img src={photo.url} alt={photo.name} />
                             </div>
                         )
                     })}
-                </Slider>
+                </div>
+                 {/* Add Pagination */}
+                <div className="swiper-pagination"></div>
+                </div>
             </div>
         )
     };

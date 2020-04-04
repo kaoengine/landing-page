@@ -6,7 +6,7 @@ type BadgetProps = {
   subHeader: string;
 };
 
-export const Badget: FunctionComponent<BadgetProps> = ({ header, subHeader }) => {
+const SectionVerbal: FunctionComponent<BadgetProps> = ({ header, subHeader }) => {
   return (
     <h2 className="ui header">
       {header}
@@ -14,3 +14,5 @@ export const Badget: FunctionComponent<BadgetProps> = ({ header, subHeader }) =>
   </h2>
 	)
 };
+
+export default SectionVerbal;
