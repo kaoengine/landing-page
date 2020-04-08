@@ -1,12 +1,9 @@
 import * as React from "react";
 import { Menu, Sidebar, Segment, Icon } from "semantic-ui-react";
 import "../App.css";
-import Footer from "./Footer/Footer";
-import CardBox from "./Card/CardBox";
-import CardFancy from "./CardFancy/CardFancy";
-import Carousel from "./Carousel/Carousel";
-import InputForm from "./SubmitForm/InputForm";
+
 import MenuBar from "./Navbar/MenuBar";
+import LatestNewsComponent from "./LatestNewsComponent/LatestNewsComponent";
 
 type iState = {
   visible: boolean;
@@ -14,12 +11,8 @@ type iState = {
 class App extends React.Component<any, iState> {
   state: iState = { visible: false };
 
-  public handleSidebarToggle = (bolValue: any) => {
-    if (bolValue === false) {
-      this.setState({ visible: true });
-    } else {
-      this.setState({ visible: false });
-    }
+  public handleSidebarToggle = (bolValue: boolean) => {
+    this.setState({ visible: !bolValue });
   };
   public render() {
     const { visible } = this.state;
@@ -33,7 +26,7 @@ class App extends React.Component<any, iState> {
             direction="left"
             icon="labeled"
             inverted
-            onHide={this.handleSidebarToggle}
+            onHide={event => this.handleSidebarToggle}
             vertical
             visible={visible}
             width="thin"
@@ -57,15 +50,10 @@ class App extends React.Component<any, iState> {
           {/* overlay the content */}
           <Sidebar.Pusher>
             <Segment basic>
-              <Footer />
-              <CardBox />
-              <CardFancy />
-              <Carousel />
-              <InputForm />
+              <LatestNewsComponent />
             </Segment>
           </Sidebar.Pusher>
         </Sidebar.Pushable>
-        <MenuBar />
       </div>
     );
   }

@@ -1,26 +1,31 @@
-import * as React from 'react';
+import * as React from "react";
 import "./Card.css";
-import { Grid, Image } from 'semantic-ui-react'
+import { Grid } from "semantic-ui-react";
+import IconImage from "../IconImage/IconImage";
 
-class Card extends React.Component{
-    public render(){ 
-        return (
-            <Grid columns='two' divided>
-                <Grid.Row>
-                    <Grid.Column>
-                        <div className="wrapper">
-                            <div className="item">
-                                <Image src="/img/image-icon-1.png" alt="imageIcon1" className="img"/>
-                            </div>
-                            <div className="item">
-                                <p className="paragraph">Proactively syndicate open-source e-markets after low-risk high-yield synergy. Professionally simplify visionary technology.</p>
-                            </div>  
-                        </div>
-                    </Grid.Column>
-                </Grid.Row>
-            </Grid>
-        )
-    }
+class Card extends React.Component {
+  public render() {
+    return (
+      <Grid columns="two" divided>
+        <Grid.Row>
+          <Grid.Column>
+            <div className="wrapper">
+              <div className="item">
+                <IconImage />
+              </div>
+              <div className="item">
+                <p className="paragraph">
+                  Proactively syndicate open-source e-markets after low-risk
+                  high-yield synergy. Professionally simplify visionary
+                  technology.
+                </p>
+              </div>
+            </div>
+          </Grid.Column>
+        </Grid.Row>
+      </Grid>
+    );
+  }
 }
 
 export default Card;

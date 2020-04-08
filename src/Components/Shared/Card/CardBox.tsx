@@ -1,23 +1,22 @@
-import * as React from 'react';
+import * as React from "react";
 
-import Card from './Card';
-import HeaderTitle from '../Header/HeaderTitle';
-import ImageProduct from '../ImageComponent/ImageProduct';
+import Card from "./Card";
+import HeaderTitle from "../Header/HeaderTitle";
+import ImageProduct from "../ImageComponent/ImageProduct";
 
+class CardBox extends React.Component {
+  public render() {
+    return (
+      <div style={{ marginLeft: "30px" }}>
+        <HeaderTitle />
+        <div>
+          <Card />
+        </div>
 
-class CardBox extends React.Component{
-    public render(){
-        return(
-           <div style={{marginLeft: '30px'}}>
-                <HeaderTitle/>
-                <div>
-                    <Card/>
-                </div>
-                
-                <ImageProduct />
-           </div>
-        )
-    }
+        <ImageProduct />
+      </div>
+    );
+  }
 }
 
 export default CardBox;
