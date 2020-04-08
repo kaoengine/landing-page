@@ -12,9 +12,6 @@ type SocialProps = {
   icon: SocialIcon;
 };
 
-const badgetStyle = {
-  borderRadius: "30px"
-};
 
 export const Social: FunctionComponent<SocialProps> = ({ icon }) => {
   return (
