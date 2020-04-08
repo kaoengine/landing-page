@@ -1,0 +1,57 @@
+.ui.card,
+.ui.cards > .card {
+  text-align: center;
+  align-items: center;
+  border-radius: 25px;
+  max-width: 200px;
+}
+
+.ui.card > .content > .header:not(.ui),
+.ui.cards > .card > .content > .header:not(.ui) {
+  font-size: 20px;
+  line-height: 20px;
+  margin-bottom: 20px;
+}
+.ui.card .content img,
+.ui.cards > .card .content img {
+  width: 200px;
+  height: 200px;
+}
+
+.ui.card .meta,
+.ui.cards > .card .meta {
+  font-family: "Montserrat";
+  font-size: 40px;
+  font-weight: bold;
+  line-height: 40px;
+  margin-top: 15px;
+  margin-bottom: 35px;
+}
+
+div.ui.list {
+  font-family: "Open Sans";
+  font-size: 1rem;
+  font-weight: bold;
+  color: rgb(132, 146, 166);
+}
+div.ui.list > div.item.listItem {
+  padding-bottom: 12px;
+}
+
+/* animation */
+.single-pricing-pack {
+  transition: all 0.2s ease 0s;
+  box-shadow: 0 0 0 1px #ebebeb;
+  border: none;
+  border-top: 4px solid transparent;
+}
+
+.card.single-pricing-pack:hover {
+  z-index: 2;
+  border-radius: 1rem;
+}
+.single-pricing-pack:hover {
+  box-shadow: 0 1rem 3rem rgba(31, 45, 61, 0.125);
+  transform: translate(0, -5px);
+  border-top: 4px solid #9629e6;
+}
