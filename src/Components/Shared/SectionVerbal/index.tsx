@@ -6,16 +6,14 @@ type SectionVerbalProps = {
 };
 
 const verbalStyle = {
-  padding: '10px 0',
-  textAlign: 'center' as const
-}
+  padding: "10px 0",
+  textAlign: "center" as const,
+};
 
-export const SectionVerbal: FunctionComponent<SectionVerbalProps> = ({ header, subHeader }) => {
-const SectionVerbal: FunctionComponent<BadgetProps> = ({
+const SectionVerbal: FunctionComponent<SectionVerbalProps> = ({
   header,
-  subHeader
+  subHeader,
 }) => {
-
   return (
     <h2 className="ui header" style={verbalStyle}>
       {header}
