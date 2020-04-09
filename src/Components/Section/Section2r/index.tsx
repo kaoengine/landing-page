@@ -1,11 +1,11 @@
-import React, { FunctionComponent } from "react";
+import React, { FunctionComponent, ReactElement } from "react";
 import { Grid } from "semantic-ui-react";
-import SectionVerbal from "../SectionVerbal";
+import SectionVerbal from "../../Shared/SectionVerbal";
 
 type Section2rr23cProps = {
   header: string;
   subHeader: string;
-  component: Element[];
+  component: ReactElement[] | ReactElement
 };
 
 export const Section2r: FunctionComponent<Section2rr23cProps> = ({

@@ -1,8 +1,8 @@
 import * as React from "react";
 import { Grid } from "semantic-ui-react";
-import SectionVerbal from "../SectionVerbal";
-import { CardBlog } from "../CardBlog";
-import { Color } from "../Badget";
+import SectionVerbal from "../../Shared/SectionVerbal";
+import { CardBlog } from "../../Shared/CardBlog";
+import { Color } from "../../Shared/Badget";
 
 class LatestNewsComponent extends React.Component {
   render() {

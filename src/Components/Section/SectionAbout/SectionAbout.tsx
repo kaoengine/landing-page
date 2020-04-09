@@ -1,8 +1,8 @@
 import * as React from "react";
-import SectionVerbal from "../SectionVerbal";
-import IconImage from "../IconImage/IconImage";
-import { Tile } from "../Tiles/index";
-import ImageProduct from "../ImageComponent/ImageProduct";
+import SectionVerbal from "../../Shared/SectionVerbal";
+import IconImage from "../../Shared/IconImage/IconImage";
+import { Tile } from "../../Shared/Tiles/index";
+import ImageProduct from "../../Shared/ImageComponent/ImageProduct";
 
 import { Grid } from "semantic-ui-react";
 import CSS from "csstype";

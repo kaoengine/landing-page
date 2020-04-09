@@ -4,17 +4,13 @@ import faker from "faker";
 import times from "lodash/times";
 import { Accordion } from "semantic-ui-react";
 
-type IState = {
-  activeIndex: boolean;
-};
-
 const panels = times(1, i => ({
   key: `panel-${i}`,
   title: faker.lorem.sentence(),
   content: faker.lorem.paragraphs()
 }));
 
-export default class AccordionComponent extends React.Component<IState> {
+export default class AccordionComponent extends React.Component {
 
   private _handleTitleClick = (e: Event, data: any) => {
     e.preventDefault();

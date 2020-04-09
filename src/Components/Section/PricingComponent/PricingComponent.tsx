@@ -1,9 +1,9 @@
 import * as React from "react";
 import { Grid } from "semantic-ui-react";
-import SectionVerbal from "../SectionVerbal";
-import CardWithPurchaseButton from "../CardWithPurchaseButton/CardWithPurchaseButton";
+import SectionVerbal from "../../Shared/SectionVerbal";
+import CardWithPurchaseButton from "../../Shared/CardWithPurchaseButton/CardWithPurchaseButton";
+import AccordionComponent from "../../Shared/AccordionComponent/AccordionComponent";
 
-import AccordionComponent from "../AccordionComponent/AccordionComponent";
 class PricingComponent extends React.Component {
   render() {
     return (
@@ -35,10 +35,10 @@ class PricingComponent extends React.Component {
         </Grid.Row>
         <Grid.Row celled="internally">
           <Grid.Column width={8}>
-            <AccordionComponent activeIndex={false} />
+            <AccordionComponent />
           </Grid.Column>
           <Grid.Column width={8}>
-            <AccordionComponent activeIndex={false} />
+            <AccordionComponent />
           </Grid.Column>
         </Grid.Row>
       </Grid>

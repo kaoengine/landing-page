@@ -1,8 +1,8 @@
 import * as React from "react";
-import SectionVerbal from "../SectionVerbal";
-import CardFancy from "../CardFancy/CardFancy";
-import { Tile } from "../Tiles/index";
-import ImageProduct from "../ImageComponent/ImageProduct";
+import SectionVerbal from "../../Shared/SectionVerbal";
+import CardFancy from "../../Shared/CardFancy/CardFancy";
+import { Tile } from "../../Shared/Tiles/index";
+import ImageProduct from "../../Shared/ImageComponent/ImageProduct";
 
 import { Grid } from "semantic-ui-react";
 

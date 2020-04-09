@@ -3,7 +3,7 @@ import { Menu, Sidebar, Segment, Icon } from "semantic-ui-react";
 import "../App.css";
 
 import MenuBar from "./Navbar/MenuBar";
-import LatestNewsComponent from "./LatestNewsComponent/LatestNewsComponent";
+import Home from "../Page/Home";
 
 type iState = {
   visible: boolean;
@@ -18,6 +18,7 @@ class App extends React.Component<any, iState> {
     const { visible } = this.state;
     return (
       <div className="App">
+        <Home activeIndex></Home>
         <Icon name="bars" onClick={() => this.handleSidebarToggle(visible)} />
         <Sidebar.Pushable as={Segment}>
           <Sidebar
@@ -48,11 +49,11 @@ class App extends React.Component<any, iState> {
           </Sidebar>
 
           {/* overlay the content */}
-          <Sidebar.Pusher>
+          {/* <Sidebar.Pusher>
             <Segment basic>
               <LatestNewsComponent />
             </Segment>
-          </Sidebar.Pusher>
+          </Sidebar.Pusher> */}
         </Sidebar.Pushable>
       </div>
     );

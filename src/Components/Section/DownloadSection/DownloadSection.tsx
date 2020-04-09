@@ -1,8 +1,8 @@
 import * as React from "react";
-import SectionVerbal from "../SectionVerbal";
-import { Tile } from "../Tiles/index";
-import ImageProduct from "../ImageComponent/ImageProduct";
-import ButtonComponent from "../Button/ButtonComponent";
+import SectionVerbal from "../../Shared/SectionVerbal";
+import { Tile } from "../../Shared/Tiles/index";
+import ImageProduct from "../../Shared/ImageComponent/ImageProduct";
+import ButtonComponent from "../../Shared/Button/ButtonComponent";
 import { Grid, Icon } from "semantic-ui-react";
 
 class DownloadSection extends React.Component {
