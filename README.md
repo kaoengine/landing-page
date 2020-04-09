@@ -2,7 +2,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Available Scripts
 
-## MOCKUP:
+## MOCKUP: http://appco.themetags.com/index.html
 
 
 In the project directory, you can run:
