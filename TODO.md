@@ -2,8 +2,8 @@ Todo list
 ====
 
 ## Next present
-- [ ] 10/4 BEM 
-- [ ] 10/4 HOC vs Props 
+- [x] 10/4 BEM 
+- [x] 10/4 HOC vs Props 
 - [ ] Cheatsheet learning show.
 
 ## Next tasks
