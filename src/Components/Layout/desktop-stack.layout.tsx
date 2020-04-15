@@ -1,8 +1,5 @@
 import React, { Fragment } from 'react'
-import {
-    Container,
-} from 'semantic-ui-react'
-
+import { LayoutItemType } from "../../Types/LayoutItem";
 
 /**
  * The fixed navigation
@@ -13,14 +10,12 @@ import {
 const LayoutSegment = (componentObject: any) => {
     const { type, component } = componentObject;
 
-    console.log('componentObject', componentObject);
-
     switch (type) {
-        case 'nav':
+        case LayoutItemType.Nav:
             return <Fragment>
                 {component}
             </Fragment>
-        case 'footer':
+        case LayoutItemType.Footer:
             return <Fragment>
                 {component}
             </Fragment>
