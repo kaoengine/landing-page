@@ -14,6 +14,8 @@ Todo list
 - [ ] Khanh implment task.
 - [x] implment layout structure, @khanh
 - [x] Get feed back from team, @quan @dieu
+- [ ] Implment simple contribution. @quan
+
 ## Next project structure
 
 - [ ] Apply super productivity with github
