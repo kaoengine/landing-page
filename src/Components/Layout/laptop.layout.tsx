@@ -13,8 +13,6 @@ import {
 const LayoutSegment = (componentObject: any) => {
     const { type, component } = componentObject;
 
-    console.log('componentObject', componentObject);
-
     switch (type) {
         case 'nav':
             return <Fragment>
