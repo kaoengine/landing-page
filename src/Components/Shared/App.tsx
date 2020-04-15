@@ -3,7 +3,7 @@ import { Menu, Sidebar, Segment, Icon } from "semantic-ui-react";
 import "../App.css";
 
 import MenuBar from "./Navbar/MenuBar";
-import Home from "../Page/Home";
+// import Home from "../Page/Home";
 
 type iState = {
   visible: boolean;
@@ -18,7 +18,7 @@ class App extends React.Component<any, iState> {
     const { visible } = this.state;
     return (
       <div className="App">
-        <Home activeIndex></Home>
+        {/* <Home activeIndex></Home> */}
         <Icon name="bars" onClick={() => this.handleSidebarToggle(visible)} />
         <Sidebar.Pushable as={Segment}>
           <Sidebar
@@ -27,7 +27,7 @@ class App extends React.Component<any, iState> {
             direction="left"
             icon="labeled"
             inverted
-            onHide={event => this.handleSidebarToggle}
+            onHide={(event) => this.handleSidebarToggle}
             vertical
             visible={visible}
             width="thin"
