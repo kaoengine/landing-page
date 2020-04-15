@@ -12,7 +12,8 @@ Todo list
 - [ ] Use template for HomePage
 - [ ] Apply CSS BEM architect
 - [ ] Khanh implment task.
-
+- [x] implment layout structure, @khanh
+- [x] Get feed back from team, @quan @dieu
 ## Next project structure
 
 - [ ] Apply super productivity with github
