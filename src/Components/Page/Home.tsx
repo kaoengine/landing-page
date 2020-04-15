@@ -1,13 +1,13 @@
 
 import React, { Fragment } from 'react'
-import FixedMenuLayout from "../Layout/base.layout";
+import DesktopStackLayout from "../Layout/desktop-stack.layout";
 import Navbar from "../Shared/Navbar/MenuBar";
 import LatestNewsComponent from "../Section/LatestNewsComponent/LatestNewsComponent";
 import Footer from "../Section/Footer/Footer"
 const HomePage = () => {
     return (
         <Fragment>
-            <FixedMenuLayout components={[{
+            <DesktopStackLayout components={[{
                 type: 'nav',
                 component: <Navbar />
             },

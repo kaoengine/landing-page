@@ -5,7 +5,7 @@ import {
 
 
 /**
- * The fixed navigation
+ * The !fixed navigation
  *
  * @version 1.0.1
  * @author [Khanh Tran](https://github.com/khanhtran8)
@@ -17,23 +17,26 @@ const LayoutSegment = (componentObject: any) => {
 
     switch (type) {
         case 'nav':
-            return <Container fixed='top' inverted>
+            return <Fragment>
                 {component}
-            </Container>
+            </Fragment>
         case 'footer':
-            return <Container>
+            return <Fragment>
                 {component}
-            </Container>
+            </Fragment>
         /** SEGMENT BY DEFAULT */
         default:
-            return <Container fixed='top' inverted>
+            return <Fragment>
                 {component}
-            </Container>
+            </Fragment>
     }
 }
 
+/**
+ * Stack Layout
+ */
 
-const FixedMenuLayout = ({ components }: any) => {
+const StackLayout = ({ components }: any) => {
     return (
         <Fragment>
             {
@@ -44,4 +47,4 @@ const FixedMenuLayout = ({ components }: any) => {
     )
 }
 
-export default FixedMenuLayout
+export default StackLayout
