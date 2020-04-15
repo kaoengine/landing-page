@@ -11,6 +11,7 @@ class App extends React.Component<any, iState> {
   public handleSidebarToggle = (bolValue: boolean) => {
     this.setState({ visible: !bolValue });
   };
+
   public render() {
     return (
       <div className="App" >
