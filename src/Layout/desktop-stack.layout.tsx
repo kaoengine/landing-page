@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react'
-import { LayoutItemType } from "../../Types/LayoutItem";
+import { LayoutItemType } from "../Types/LayoutItem";
 
 /**
  * The fixed navigation

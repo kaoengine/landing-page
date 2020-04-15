@@ -1,6 +1,6 @@
 import * as React from "react";
 import "./App.css";
-import Home from "../Components/Page/Home";
+import Home from "../Page/Home";
 
 type iState = {
   visible: boolean;
