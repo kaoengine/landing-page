@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
 import { LayoutItemType, KaoComponent } from "../Types/LayoutItem";
 import { Container, Sticky } from "semantic-ui-react";
-import _ from "lodash";
+import * as _ from "lodash";
 import {  } from "../";
 /**
  * The fixed navigation
@@ -11,26 +11,26 @@ import {  } from "../";
  */
 const layoutLogic: any = {
   [LayoutItemType.Nav]:               (component: any) => <Sticky>{component}</Sticky>,
-  [LayoutItemType.sectionAbout]:      (component: any) => <Fragment>{component}</Fragment>,
-  [LayoutItemType.sectionFeature]:    (component: any) => <Fragment>{component}</Fragment>,
-  [LayoutItemType.sectionPricing]:    (component: any) => <Fragment>{component}</Fragment>,
-  [LayoutItemType.sectionLatestNews]: (component: any) => <Fragment>{component}</Fragment>,
+  [LayoutItemType.SectionAbout]:      (component: any) => <Fragment>{component}</Fragment>,
+  [LayoutItemType.SectionFeature]:    (component: any) => <Fragment>{component}</Fragment>,
+  [LayoutItemType.SectionPricing]:    (component: any) => <Fragment>{component}</Fragment>,
+  [LayoutItemType.SectionLatestNews]: (component: any) => <Fragment>{component}</Fragment>,
   [LayoutItemType.Form]:              (component: any) => <Fragment>{component}</Fragment>
 }
-const LayoutSegment = ({type, component}: KaoComponent) => _.get(layoutLogic, type, layoutLogic.Form)(component);
+const LayoutSegment = ({type, component}: KaoComponent) => _.get(layoutLogic, type, layoutLogic.Form)(component); 
 
 const LayoutSegmentStupid = ({type, component}: KaoComponent) => {
 
   switch (type) {
     case LayoutItemType.Nav:
       return <Sticky>{component}</Sticky>;
-    case LayoutItemType.sectionAbout:
+    case LayoutItemType.SectionAbout:
       return <Fragment>{component}</Fragment>;
-    case LayoutItemType.sectionFeature:
+    case LayoutItemType.SectionFeature:
       return <Fragment>{component}</Fragment>;
-    case LayoutItemType.sectionPricing:
+    case LayoutItemType.SectionPricing:
       return <Fragment>{component}</Fragment>;
-    case LayoutItemType.sectionLatestNews:
+    case LayoutItemType.SectionLatestNews:
       return <Fragment>{component}</Fragment>;
     case LayoutItemType.Form:
       return <Fragment>{component}</Fragment>;
