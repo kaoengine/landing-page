@@ -2,8 +2,8 @@ Todo list
 ====
 
 ## Next present
-- [ ] 10/4 BEM 
-- [ ] 10/4 HOC vs Props 
+- [x] 10/4 BEM 
+- [x] 10/4 HOC vs Props 
 - [ ] Cheatsheet learning show.
 
 ## Next tasks
@@ -12,6 +12,9 @@ Todo list
 - [ ] Use template for HomePage
 - [ ] Apply CSS BEM architect
 - [ ] Khanh implment task.
+- [x] implment layout structure, @khanh
+- [x] Get feed back from team, @quan @dieu
+- [ ] Implment simple contribution. @quan
 
 ## Next project structure
 
