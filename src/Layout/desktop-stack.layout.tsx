@@ -1,19 +1,29 @@
 import React, { Fragment } from "react";
-import { LayoutItemType } from "../Types/LayoutItem";
-import { Container } from "semantic-ui-react";
-
+import { LayoutItemType, KaoComponent } from "../Types/LayoutItem";
+import { Container, Sticky } from "semantic-ui-react";
+import _ from "lodash";
+import {  } from "../";
 /**
  * The fixed navigation
  *
  * @version 1.0.1
  * @author [Khanh Tran](https://github.com/khanhtran8)
  */
-const LayoutSegment = (componentObject: any) => {
-  const { type, component } = componentObject;
+const layoutLogic: any = {
+  [LayoutItemType.Nav]:               (component: any) => <Sticky>{component}</Sticky>,
+  [LayoutItemType.sectionAbout]:      (component: any) => <Fragment>{component}</Fragment>,
+  [LayoutItemType.sectionFeature]:    (component: any) => <Fragment>{component}</Fragment>,
+  [LayoutItemType.sectionPricing]:    (component: any) => <Fragment>{component}</Fragment>,
+  [LayoutItemType.sectionLatestNews]: (component: any) => <Fragment>{component}</Fragment>,
+  [LayoutItemType.Form]:              (component: any) => <Fragment>{component}</Fragment>
+}
+const LayoutSegment = ({type, component}: KaoComponent) => _.get(layoutLogic, type, layoutLogic.Form)(component);
+
+const LayoutSegmentStupid = ({type, component}: KaoComponent) => {
 
   switch (type) {
     case LayoutItemType.Nav:
-      return <Fragment>{component}</Fragment>;
+      return <Sticky>{component}</Sticky>;
     case LayoutItemType.sectionAbout:
       return <Fragment>{component}</Fragment>;
     case LayoutItemType.sectionFeature:
@@ -29,7 +39,6 @@ const LayoutSegment = (componentObject: any) => {
       return <Fragment>{component}</Fragment>;
   }
 };
-
 /**
  * Stack Layout
  */
@@ -37,9 +46,9 @@ const LayoutSegment = (componentObject: any) => {
 const DesktopStackLayout = ({ components }: any) => {
   return (
     <Fragment>
-      {components.map((component: any, index: number) => (
+      {components.map((component: any) => (
         <Container>
-          <LayoutSegment key={index} {...component}></LayoutSegment>
+          <LayoutSegment {...component}></LayoutSegment>
         </Container>
       ))}
     </Fragment>

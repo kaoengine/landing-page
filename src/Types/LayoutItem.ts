@@ -1,3 +1,5 @@
+import { ReactElement } from "react";
+
 export enum LayoutItemType {
   Nav = "nav",
   Section = "sec",
@@ -9,3 +11,9 @@ export enum LayoutItemType {
   Footer = "foo",
   Modal = "mod",
 }
+
+export type KaoComponent = {
+  type: LayoutItemType;
+  component: ReactElement;
+};
+

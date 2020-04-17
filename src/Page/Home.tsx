@@ -7,20 +7,15 @@ import PricingComponent from "../Components/Section/PricingComponent/PricingComp
 import LatestNewsComponent from "../Components/Section/LatestNewsComponent/LatestNewsComponent";
 import SubmitForm from "../Components/Section/SubmitForm/InputForm";
 import Footer from "../Components/Section/Footer/Footer";
-import { LayoutItemType } from "../Types/LayoutItem";
+import { LayoutItemType, KaoComponent } from "../Types/LayoutItem";
 
 /**
  * As clean process data 1st is define on component as []
  * then when data is bigger we can split out as module.
  */
 
-type Component = {
-  type: LayoutItemType;
-  component: ReactElement;
-};
-
 const HomePage = () => {
-  let homeComponents: Array<Component> = [
+  let homeComponents: Array<KaoComponent> = [
     {
       type: LayoutItemType.Nav,
       component: <Navbar />,
