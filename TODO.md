@@ -1,23 +1,27 @@
-Todo list
-====
+# Todo list
 
 ## Next present
-- [ ] 10/4 BEM 
-- [ ] 10/4 HOC vs Props 
+
+- [x] 10/4 BEM
+- [x] 10/4 HOC vs Props
 - [ ] Cheatsheet learning show.
 
 ## Next tasks
 
-- [ ] Define smart template | Data architect 
+- [ ] Define smart template | Data architect
 - [ ] Use template for HomePage
 - [ ] Apply CSS BEM architect
 - [ ] Khanh implment task.
+- [x] pass components into desktop-stack.layout @dieu.
+- [x] implment layout structure, @khanh
+- [x] Get feed back from team, @quan @dieu
 
 ## Next project structure
 
 - [ ] Apply super productivity with github
 
 ## Stuff to check out later on
-* Implement unitTest
-* Integrate with Redux 
-* SauceLabs to do UI tests
+
+- Implement unitTest
+- Integrate with Redux
+- SauceLabs to do UI tests
