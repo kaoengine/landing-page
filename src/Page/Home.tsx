@@ -25,19 +25,19 @@ const HomePage = () => {
     //   component: <LatestNewsComponent />,
     // },
     {
-      type: LayoutItemType.sectionAbout,
+      type: LayoutItemType.SectionAbout,
       component: <SectionAbout />,
     },
     {
-      type: LayoutItemType.sectionFeature,
+      type: LayoutItemType.SectionFeature,
       component: <SectionFeatures />,
     },
     {
-      type: LayoutItemType.sectionPricing,
+      type: LayoutItemType.SectionPricing,
       component: <PricingComponent />,
     },
     {
-      type: LayoutItemType.sectionLatestNews,
+      type: LayoutItemType.SectionLatestNews,
       component: <LatestNewsComponent />,
     },
     {
