@@ -8,7 +8,7 @@ class CardFancy extends React.Component {
       display: "flex",
       flexWrap: "wrap",
       margin: "0 -5px",
-      justifyContent: "row"
+      justifyContent: "row",
     };
     return (
       <div style={flexStyles}>

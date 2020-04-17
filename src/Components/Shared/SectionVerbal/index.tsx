@@ -1,4 +1,5 @@
 import React, { FunctionComponent } from "react";
+import { Header } from "semantic-ui-react";
 
 type SectionVerbalProps = {
   header: string;
@@ -15,10 +16,10 @@ const SectionVerbal: FunctionComponent<SectionVerbalProps> = ({
   subHeader,
 }) => {
   return (
-    <h2 className="ui header" style={verbalStyle}>
+    <Header as="h2" style={verbalStyle}>
       {header}
-      <div className="sub header">{subHeader}</div>
-    </h2>
+      <Header.Subheader>{subHeader}</Header.Subheader>
+    </Header>
   );
 };
 
