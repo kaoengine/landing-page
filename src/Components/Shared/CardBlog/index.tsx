@@ -1,6 +1,6 @@
 import React, { FunctionComponent } from "react";
 import { Badget, Color } from "../Badget";
-import './CardBlog.css';
+import './CardBlog.scss';
 
 type CardBlogProps = {
   comment: string;

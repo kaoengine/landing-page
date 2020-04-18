@@ -2,7 +2,7 @@ import React, { FunctionComponent, useState } from "react";
 import { Image, Segment, Grid } from "semantic-ui-react";
 import { Section2r } from "../../Section/Section2r";
 import { Social, SocialIcon } from "../Social";
-import "./TeamImage.css";
+import "./TeamImage.scss";
 
 const square = {
   width: 400,

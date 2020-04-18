@@ -1,7 +1,7 @@
 import * as React from "react";
 import HeaderTitle from "../Header/HeaderTitle";
 import Swiper from "swiper";
-import "swiper/css/swiper.css";
+import "swiper/css/swiper.scss";
 import "swiper/js/swiper.min.js";
 
 const photos = [

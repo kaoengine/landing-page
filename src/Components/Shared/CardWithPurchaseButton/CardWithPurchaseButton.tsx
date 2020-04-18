@@ -1,6 +1,6 @@
 import * as React from "react";
 import { Card, Image, List } from "semantic-ui-react";
-import "./CardWithPurchaseButton.css";
+import "./CardWithPurchaseButton.scss";
 import ButtonComponent from "../Button/ButtonComponent";
 export default class CardFancy extends React.Component {
   public render() {

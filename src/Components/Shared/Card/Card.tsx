@@ -1,5 +1,5 @@
 import * as React from "react";
-import "./Card.css";
+import "./Card.scss";
 import { Grid } from "semantic-ui-react";
 import IconImage from "../IconImage/IconImage";
 
