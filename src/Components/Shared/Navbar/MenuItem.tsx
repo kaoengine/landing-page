@@ -11,7 +11,9 @@ const NavbarItems = [
     {name: 'Features'},
     {name: 'Pricing'},
     {name: 'Screenshots'},
-    {name: 'Pages'},
+    {name: 'Pages', subMenu:[{
+        signIn: 'SignIn',
+    }]},
     {name: 'Blog'},
     {name: 'Team'},
     {name: 'Contact'},
@@ -29,7 +31,9 @@ class MenuItem extends Component {
                         <Router>                   
                             <Dropdown pointing className='link item' text={NavbarItem.name}>
                                 <Dropdown.Menu>
-                                    <Dropdown.Item>Page1</Dropdown.Item>
+                                    <Dropdown.Item>
+                                    <Link to="/signin">Sign In</Link>
+                                    </Dropdown.Item>
                                     <Dropdown.Item>Page2</Dropdown.Item>
                                 </Dropdown.Menu>
                             </Dropdown>                          

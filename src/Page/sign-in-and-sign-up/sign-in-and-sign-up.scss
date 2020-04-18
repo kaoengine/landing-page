@@ -1,0 +1,47 @@
+p {
+    margin-bottom: 1.25em;
+}
+a {
+    text-decoration: none !important;
+    background-color: transparent;
+    transition: all .3s ease-in-out;
+}
+.gray-light-bg {
+    background: #f4f7fa;
+}
+.full-screen {
+    min-height: 100vh;
+    position: relative;
+    width: 100%;
+    z-index: 1;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ml-n3, .mx-n3 {
+    margin-left: -.98rem!important;
+}
+.bg-cover {
+    background-repeat: no-repeat;
+    background-position: 50%;
+    background-size: cover;
+}
+
+.vh-100 {
+    height: 100vh!important;
+}
+
+.login-signup-content {
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
