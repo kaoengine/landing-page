@@ -8,12 +8,16 @@ import { Grid, Container } from "semantic-ui-react";
 import styled from "styled-components";
 
 const Wrapper = styled.div`
-  // background: url("/img/about-bg-shape.svg");
-  // background-repeat: no-repeat;
-  // background-size: cover;
-  // padding-top: 5em;
-  // padding: 10em;
+  background: url("/img/about-bg-shape.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 10em 0 0 0;
   //component layout is broken
+`;
+
+const ImageWrapper = styled.div`
+  display: flex;
+  justify-content: center;
 `;
 
 class SectionAbout extends React.Component {
@@ -44,7 +48,9 @@ class SectionAbout extends React.Component {
                 </Grid.Row>
               </Grid.Column>
               <Grid.Column>
-                <ImageProduct />
+                <ImageWrapper>
+                  <ImageProduct />
+                </ImageWrapper>
               </Grid.Column>
             </Grid.Row>
           </Grid>
