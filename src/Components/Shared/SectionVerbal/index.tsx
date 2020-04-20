@@ -8,7 +8,7 @@ type SectionVerbalProps = {
 
 const verbalStyle = {
   padding: "10px 0",
-  textAlign: "center" as const,
+  textAlign: "left" as const,
 };
 
 const SectionVerbal: FunctionComponent<SectionVerbalProps> = ({

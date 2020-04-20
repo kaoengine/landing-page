@@ -4,38 +4,50 @@ import IconImage from "../../Shared/IconImage/IconImage";
 import { Tile } from "../../Shared/Tiles/index";
 import ImageProduct from "../../Shared/ImageComponent/ImageProduct";
 
-import { Grid } from "semantic-ui-react";
-import CSS from "csstype";
+import { Grid, Container } from "semantic-ui-react";
+import styled from "styled-components";
+
+const Wrapper = styled.div`
+  // background: url("/img/about-bg-shape.svg");
+  // background-repeat: no-repeat;
+  // background-size: cover;
+  // padding-top: 5em;
+  // padding: 10em;
+  //component layout is broken
+`;
 
 class SectionAbout extends React.Component {
   render() {
-    const flexContainer: CSS.Properties = {
-      display: "flex",
-      flexWrap: "nowrap",
-      flexDirection: "row"
-    };
     return (
-      <Grid divided="vertically">
-        <Grid.Row columns={2}>
-          <Grid.Column>
-            <SectionVerbal
-              header={"Use your android or ios device"}
-              subHeader={"to manage everything."}
-            />
-            <div style={flexContainer}>
-              <IconImage />
-              <Tile
-                content={
-                  "Proactively syndicate open-source e-markets after low-risk high-yield synergy. Professionally simplify visionary technology."
-                }
-              />
-            </div>
-          </Grid.Column>
-          <Grid.Column>
-            <ImageProduct />
-          </Grid.Column>
-        </Grid.Row>
-      </Grid>
+      <Wrapper>
+        <Grid>
+          <Grid.Row columns={2}>
+            <Grid.Column>
+              <Grid.Row>
+                <SectionVerbal
+                  header={"Use your android or ios device"}
+                  subHeader={"to manage everything."}
+                />
+              </Grid.Row>
+              <Grid.Row columns={2}>
+                <Grid.Column computer={4}>
+                  <IconImage />
+                </Grid.Column>
+                <Grid.Column computer={12}>
+                  <Tile
+                    content={
+                      "Proactively syndicate open-source e-markets after low-risk high-yield synergy. Professionally simplify visionary technology."
+                    }
+                  />
+                </Grid.Column>
+              </Grid.Row>
+            </Grid.Column>
+            <Grid.Column>
+              <ImageProduct />
+            </Grid.Column>
+          </Grid.Row>
+        </Grid>
+      </Wrapper>
     );
   }
 }
