@@ -1,31 +1,74 @@
 import * as React from "react";
-import { Card, Image, List } from "semantic-ui-react";
+import { Card, Image, List, Container } from "semantic-ui-react";
 import "./CardWithPurchaseButton.css";
 import ButtonComponent from "../Button/ButtonComponent";
+import styled from "styled-components";
+
+const Wrapper = styled.div`
+  text-align: center;
+  max-width: auto;
+  height: auto;
+`;
+
+const WrapperMeta = styled.div`
+  font-family: "Montserrat";
+  font-size: 40px;
+  font-weight: bold;
+  line-height: 40px;
+  margin-top: 15px;
+  margin-bottom: 35px;
+  color: #70707c;
+`;
+
+const WrapperListItem = styled.div`
+  padding-bottom: 1.2em;
+`;
 export default class CardFancy extends React.Component {
   public render() {
     return (
-      <Card className="card single-pricing-pack">
-        <Card.Content>
-          <Card.Header>Basics</Card.Header>
-          <Image src="/img/basicPurchase.svg" />
-          <Card.Meta>$29</Card.Meta>
-          <List>
-            <List.Item className="listItem">Push Notifications</List.Item>
-            <List.Item className="listItem">Data Transfer</List.Item>
-            <List.Item className="listItem">SQL Database</List.Item>
-            <List.Item className="listItem">Search & SEO Analytics</List.Item>
-            <List.Item className="listItem">24/7 Phone Support</List.Item>
-            <List.Item className="listItem">
-              2 months technical support
-            </List.Item>
-            <List.Item className="listItem">2+ profitable keyword</List.Item>
-          </List>
-          <Card.Content extra>
-            <ButtonComponent buttonName={"Purchase now"} />
-          </Card.Content>
-        </Card.Content>
-      </Card>
+      <Wrapper>
+        <Container>
+          <Card className="card single-pricing-pack" centered>
+            <Card.Content>
+              <Card.Header as="h3">Basics</Card.Header>
+              <Image src="/img/basicPurchase.svg" />
+              <WrapperMeta>
+                <Card.Meta>$29</Card.Meta>
+              </WrapperMeta>
+              <Card.Content extra>
+                <List>
+                  <WrapperListItem>
+                    <List.Item>Push Notifications</List.Item>
+                  </WrapperListItem>
+                  <WrapperListItem>
+                    <List.Item>Data Transfer</List.Item>
+                  </WrapperListItem>
+                  <WrapperListItem>
+                    <List.Item>SQL Database</List.Item>
+                  </WrapperListItem>
+                  <WrapperListItem>
+                    <List.Item>Search & SEO Analytics</List.Item>
+                  </WrapperListItem>
+                  <WrapperListItem>
+                    <List.Item>24/7 Phone Support</List.Item>
+                  </WrapperListItem>
+                  <WrapperListItem>
+                    <List.Item>2 months technical support</List.Item>
+                  </WrapperListItem>
+                  <WrapperListItem>
+                    <List.Item>2+ profitable keyword</List.Item>
+                  </WrapperListItem>
+                </List>
+              </Card.Content>
+              <Card.Content extra>
+                <WrapperListItem>
+                  <ButtonComponent buttonName={"Purchase now"} />
+                </WrapperListItem>
+              </Card.Content>
+            </Card.Content>
+          </Card>
+        </Container>
+      </Wrapper>
     );
   }
 }

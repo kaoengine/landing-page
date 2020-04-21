@@ -4,8 +4,6 @@ import Home from "../Page/Home";
 import SignInAndSignUp from "../Page/sign-in-and-sign-up/sign-in-and-sign-up";
 import { Switch, Route, BrowserRouter } from "react-router-dom";
 
-// import "bootstrap/dist/css/bootstrap.min.css";
-
 type iState = {
   visible: boolean;
 };

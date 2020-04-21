@@ -1,6 +1,6 @@
 import React, { Fragment } from "react";
 import { LayoutItemType, KaoComponent } from "../Types/LayoutItem";
-import { Container, Sticky } from "semantic-ui-react";
+import { Sticky } from "semantic-ui-react";
 import * as _ from "lodash";
 /**
  * The fixed navigation
