@@ -4,7 +4,7 @@ import { Label } from "semantic-ui-react";
 export enum Color {
   Red = "red",
   Orange = "orange",
-  Blue = "blue"
+  Blue = "blue",
 }
 
 type BadgetProps = {
@@ -13,16 +13,16 @@ type BadgetProps = {
 };
 
 const badgetStyle = {
-	borderRadius: '30px'
-}
+  borderRadius: "30px",
+};
 
 export const Badget: FunctionComponent<BadgetProps> = ({ title, color }) => {
   return (
-	<div>
-    <Label style = {badgetStyle} color={color}>
-      {title}
-      {color}
-    </Label>
-  </div>
-	)
+    <div>
+      <Label style={badgetStyle} color={color}>
+        {title}
+        {color}
+      </Label>
+    </div>
+  );
 };

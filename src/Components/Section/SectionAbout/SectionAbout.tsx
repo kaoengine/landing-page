@@ -12,10 +12,9 @@ const Wrapper = styled.div`
   background-repeat: no-repeat;
   background-size: cover;
   padding: 10em 0 0 0;
-  //component layout is broken
 `;
 
-const ImageWrapper = styled.div`
+export const ImageWrapper = styled.div`
   display: flex;
   justify-content: center;
 `;

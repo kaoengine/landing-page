@@ -1,6 +1,6 @@
 import React, { Fragment, ReactElement } from "react";
 import DesktopStackLayout from "../Layout/desktop-stack.layout";
-import Navbar from "../Components/Shared/Navbar/MenuBar";
+import MenuItem from "../Components/Shared/Navbar/MenuItem";
 import SectionAbout from "../Components/Section/SectionAbout/SectionAbout";
 import SectionFeatures from "../Components/Section/SectionFeatures/SectionFeatures";
 import PricingComponent from "../Components/Section/PricingComponent/PricingComponent";
@@ -18,7 +18,7 @@ const HomePage = () => {
   let homeComponents: Array<KaoComponent> = [
     {
       type: LayoutItemType.Nav,
-      component: <Navbar />,
+      component: <MenuItem />,
     },
     // {
     //   type: LayoutItemType.Section,
