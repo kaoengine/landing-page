@@ -1,6 +1,6 @@
 import React, { SyntheticEvent } from "react";
 import FormInput from "../Form-input/Form-input";
-import ButtonComponent from '../Button/ButtonComponent';
+import ButtonComponent from '../Button';
 
 import "./Login.scss";
 

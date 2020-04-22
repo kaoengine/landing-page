@@ -1,7 +1,7 @@
 import * as React from "react";
 import { Card, Image, List, Container } from "semantic-ui-react";
 import "./CardWithPurchaseButton.css";
-import ButtonComponent from "../Button/ButtonComponent";
+import Button from "../Button";
 import styled from "styled-components";
 
 const Wrapper = styled.div`
@@ -62,7 +62,7 @@ export default class CardFancy extends React.Component {
               </Card.Content>
               <Card.Content extra>
                 <WrapperListItem>
-                  <ButtonComponent buttonName={"Purchase now"} />
+                  <Button buttonName={"Purchase now"} />
                 </WrapperListItem>
               </Card.Content>
             </Card.Content>

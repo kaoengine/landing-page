@@ -1,11 +1,12 @@
+/* eslint-disable react/jsx-pascal-case */
 import * as React from "react";
 import SectionVerbal from "../../Shared/SectionVerbal";
 import { Tile } from "../../Shared/Tiles/index";
-import ImageProduct from "../../Shared/ImageComponent/ImageProduct";
+import ImageProduct from "../../Shared/Image";
 
-import { Grid, Container, Input, Button } from "semantic-ui-react";
+import { Grid, Container, Input, Button as _Button } from "semantic-ui-react";
 import styled from "styled-components";
-import ButtonComponent from "../../Shared/Button/ButtonComponent";
+import Button from "../../Shared/Button";
 
 const Wrapper = styled.div`
   background: url("/img/footer-bg.png");
@@ -61,7 +62,7 @@ class HeroSection extends React.Component {
                     <InputWapper>
                       <Input type="text" placeholder="info@yourdomain.com" action>
                         <input />
-                        <ButtonComponent
+                        <Button
                           className="btn btn-lg btn-block solid-btn border-radius mt-4 mb-3"
                           buttonName="Subscribe"
                         />
@@ -71,7 +72,7 @@ class HeroSection extends React.Component {
                 </Grid.Row>
                 <Grid.Row columns={2}>
                   <Grid.Column width={1}>
-                    <Button circular icon="play" />
+                    <_Button circular icon="play" />
                   </Grid.Column>
                   <Grid.Column width={15}>
                     <Tile content={"Watch Video Overview."} />

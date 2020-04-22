@@ -1,5 +1,5 @@
 import * as React from "react";
-import { CarouselProvider, Slider, Slide, ButtonBack, ButtonNext, Image, DotGroup } from 'pure-react-carousel';
+import { CarouselProvider, Slider, Slide, DotGroup, Image } from 'pure-react-carousel';
 import 'pure-react-carousel/dist/react-carousel.es.css';
 import styled from "styled-components";
 
@@ -63,32 +63,38 @@ const DotWrapper = styled.div`
   text-align: center;
   margin-top:4em;
 `;
+
+const imgStyle = { border: '1px solid gray', borderRadius: '2em' };
+
 class Carousel extends React.Component {
   public render() {
     return (
-      <Wrapper>
-        <PhoneFrame></PhoneFrame>
-        <CarouselProvider
-          naturalSlideWidth={100}
-          naturalSlideHeight={125}
-          totalSlides={5}
-          hasMasterSpinner
-          infinite
-          // isPlaying={true}
-          playDirection="forward"
-          visibleSlides={3}
-        >
-          <Slider>
-            <Slide index={0}><ImageWrapper><Image style={{ border: '1px solid gray', borderRadius: '2em' }} isBgImage src={photos[0].url}></Image></ImageWrapper></Slide>
-            <Slide index={1}><ImageWrapper><Image style={{ border: '1px solid gray', borderRadius: '2em' }} isBgImage src={photos[1].url}></Image></ImageWrapper></Slide>
-            <Slide index={2}><ImageWrapper><Image style={{ border: '1px solid gray', borderRadius: '2em' }} isBgImage src={photos[2].url}></Image></ImageWrapper></Slide>
-            <Slide index={3}><ImageWrapper><Image style={{ border: '1px solid gray', borderRadius: '2em' }} isBgImage src={photos[3].url}></Image></ImageWrapper></Slide>
-            <Slide index={4}><ImageWrapper><Image style={{ border: '1px solid gray', borderRadius: '2em' }} isBgImage src={photos[4].url}></Image></ImageWrapper></Slide>
-          </Slider>
-          <DotWrapper><DotGroup /></DotWrapper>
-        </CarouselProvider>
-      </Wrapper >
+      <div></div>
+      // <Wrapper>
+      //   <PhoneFrame></PhoneFrame>
+      //   <CarouselProvider
+      //     naturalSlideWidth={100}
+      //     naturalSlideHeight={125}
+      //     totalSlides={5}
+      //     hasMasterSpinner
+      //     infinite
+      //     // isPlaying={true}
+      //     playDirection="forward"
+      //     visibleSlides={3}
+      //   >
+      //     {/* <Slider>
+      //       <Slide index={0}><ImageWrapper><Image isBgImage src={photos[0].url}></Image></ImageWrapper></Slide>
+      //       <Slide index={1}><ImageWrapper><Image isBgImage src={photos[1].url}></Image></ImageWrapper></Slide>
+      //       <Slide index={2}><ImageWrapper><Image isBgImage src={photos[2].url}></Image></ImageWrapper></Slide>
+      //       <Slide index={3}><ImageWrapper><Image isBgImage src={photos[3].url}></Image></ImageWrapper></Slide>
+      //       <Slide index={4}><ImageWrapper><Image isBgImage src={photos[4].url}></Image></ImageWrapper></Slide>
+      //     </Slider> */}
+      //     <DotWrapper><DotGroup /></DotWrapper>
+      //   </CarouselProvider>
+      // </Wrapper >
+      // )
     )
   }
 }
+
 export default Carousel;

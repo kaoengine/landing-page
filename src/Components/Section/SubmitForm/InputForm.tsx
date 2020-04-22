@@ -1,9 +1,9 @@
 import * as React from "react";
-import { Form, Input, TextArea, Button } from "semantic-ui-react";
+import { Form, Input, TextArea } from "semantic-ui-react";
 import DescriptionContact from "./DescriptionContact";
 import { Grid, Container } from "semantic-ui-react";
 import styled from "styled-components";
-import ButtonComponent from "../../Shared/Button/ButtonComponent";
+import Button from "../../Shared/Button";
 
 const Wrapper = styled.div`
   background: #f8f9fa;
@@ -56,7 +56,7 @@ class InputForm extends React.Component {
                     placeholder="message"
                     info={{ message: "" }}
                   />
-                  <ButtonComponent buttonName="Send Message" />
+                  <Button buttonName="Send Message" />
                 </Form>
               </Grid.Column>
             </Grid.Row>

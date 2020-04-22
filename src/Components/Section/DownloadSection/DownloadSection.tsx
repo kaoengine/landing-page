@@ -2,7 +2,7 @@ import * as React from "react";
 import SectionVerbal from "../../Shared/SectionVerbal";
 import { Tile } from "../../Shared/Tiles/index";
 import ImageProduct from "../../Shared/Image";
-import ButtonComponent from "../../Shared/Button/ButtonComponent";
+import Button from "../../Shared/Button";
 import { Grid, Icon } from "semantic-ui-react";
 
 class DownloadSection extends React.Component {
@@ -21,9 +21,9 @@ class DownloadSection extends React.Component {
             />
             <div style={{ display: "flex", marginTop: "100px" }}>
               <Icon name="android" size="big" />
-              <ButtonComponent buttonName="Google Play" />
+              <Button buttonName="Google Play" />
               <Icon name="apple" size="big" />
-              <ButtonComponent buttonName="App Store" />
+              <Button buttonName="App Store" />
             </div>
           </Grid.Column>
           <Grid.Column>
