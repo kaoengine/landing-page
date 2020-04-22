@@ -18,7 +18,6 @@ export const Tile: FunctionComponent<TileProps> = ({
 }) => {
   return (
     <Item>
-      <Item.Image size={size} src={imgSRC} />
       <Item.Content verticalAlign="middle">{content}</Item.Content>
     </Item>
   );
