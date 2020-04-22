@@ -2,7 +2,7 @@ import * as React from "react";
 import SectionVerbal from "../../Shared/SectionVerbal";
 import CardFancy from "../../Shared/CardFancy/CardFancy";
 import { Tile } from "../../Shared/Tiles/index";
-import ImageProduct from "../../Shared/ImageComponent/ImageProduct";
+import ImageProduct from "../../Shared/Image";
 
 import styled from "styled-components";
 

@@ -2,7 +2,7 @@ import * as React from "react";
 
 import Card from "./Card";
 import HeaderTitle from "../Header/HeaderTitle";
-import ImageProduct from "../ImageComponent/ImageProduct";
+import ImageProduct from "../Image";
 
 class CardBox extends React.Component {
   public render() {
