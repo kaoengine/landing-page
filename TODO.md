@@ -10,8 +10,11 @@
 
 - [ ] Define smart template | Data architect
 - [ ] Use template for HomePage
-- [ ] Apply CSS BEM architect
+- [x] Apply CSS BEM architect
 - [ ] Khanh implment task.
+- [x] Integrate with Husky
+- [ ] Doc and present about Husky and Security As code.
+- [x] Restructure style as `StyledComponent` lib. CSS in JS
 - [x] pass components into desktop-stack.layout @dieu.
 - [x] implment layout structure, @khanh
 - [x] Get feed back from team, @quan @dieu
