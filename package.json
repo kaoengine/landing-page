@@ -26,9 +26,7 @@
     "react-scripts": "3.4.1",
     "semantic-ui-css": "^2.4.1",
     "semantic-ui-react": "^0.88.2",
-    "slick-carousel": "^1.8.1",
     "styled-components": "^5.1.0",
-    "swiper": "^5.3.6",
     "typescript": "^3.7.5"
   },
   "scripts": {
@@ -38,7 +36,6 @@
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 9009 -s public",
     "build-storybook": "build-storybook -s public",
-    "prepare": "babel src -d dist --ignore __tests__ && yarn run fmt",
     "dev": "start-storybook -p 9009 -c .storybook"
   },
   "eslintConfig": {
