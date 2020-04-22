@@ -28,7 +28,7 @@ type TeamImageProps = {
 
 export const TeamImage: FunctionComponent<TeamImageProps> = ({ infor }) => {
   const [isHover, setHover] = useState(false);
-  const TeamSocialIconList: any[] = infor.socialIcon.map(el => <Grid.Column><Social icon={el} /></Grid.Column>);
+  const TeamSocialIconList: any[] = infor.socialIcon && infor.socialIcon.map(el => <Grid.Column><Social icon={el} /></Grid.Column>);
   return (
     <div onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}>

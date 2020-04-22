@@ -2,7 +2,7 @@ import * as React from "react";
 import SectionVerbal from "../../Shared/SectionVerbal";
 import IconImage from "../../Shared/IconImage/IconImage";
 import { Tile } from "../../Shared/Tiles/index";
-import ImageProduct from "../../Shared/ImageComponent/ImageProduct";
+import ImageProduct from "../../Shared/Image";
 
 import { Grid, Container } from "semantic-ui-react";
 import styled from "styled-components";

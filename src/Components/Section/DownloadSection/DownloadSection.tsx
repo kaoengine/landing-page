@@ -1,7 +1,7 @@
 import * as React from "react";
 import SectionVerbal from "../../Shared/SectionVerbal";
 import { Tile } from "../../Shared/Tiles/index";
-import ImageProduct from "../../Shared/ImageComponent/ImageProduct";
+import ImageProduct from "../../Shared/Image";
 import ButtonComponent from "../../Shared/Button/ButtonComponent";
 import { Grid, Icon } from "semantic-ui-react";
 
