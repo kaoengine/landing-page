@@ -9,7 +9,8 @@
 ## Next tasks
 
 - [ ] Define smart template | Data architect
-- [ ] Use template for HomePage
+- [x] Use template for HomePage
+- [ ] Template Retrospective 
 - [x] Apply CSS BEM architect
 - [ ] Khanh implment task.
 - [x] Integrate with Husky
@@ -18,6 +19,10 @@
 - [x] pass components into desktop-stack.layout @dieu.
 - [x] implment layout structure, @khanh
 - [x] Get feed back from team, @quan @dieu
+- [x] Intergrate and set strategy for StoryBook
+- [x] Set up tool for devENV
+- [ ] Setup CI/CD
+- [ ] Setup Devops pipe tool
 
 ## Next project structure
 
