@@ -1,8 +1,7 @@
 import * as React from "react";
-import HeaderTitle from "../Header/HeaderTitle";
-import Swiper from "swiper";
-import "swiper/css/swiper.css";
-import "swiper/js/swiper.min.js";
+import { CarouselProvider, Slider, Slide, ButtonBack, ButtonNext } from 'pure-react-carousel';
+import 'pure-react-carousel/dist/react-carousel.es.css';
+
 
 const photos = [
   {
@@ -36,27 +35,21 @@ class Carousel extends React.Component {
         clickable: true,
       },
     };
-    const swiper = new Swiper(".swiper-container", swiperConfig);
   };
 
   public render() {
     return (
-      <div className="App">
-        <HeaderTitle />
-        <div className="swiper-container">
-          <div className="swiper-wrapper">
-            {photos.map((photo, index) => {
-              return (
-                <div key={index} className="swiper-slide">
-                  <img src={photo.url} alt={photo.name} />
-                </div>
-              );
-            })}
-          </div>
-          {/* Add Pagination */}
-          <div className="swiper-pagination"></div>
-        </div>
-      </div>
+      <CarouselProvider
+        naturalSlideWidth={100}
+        naturalSlideHeight={125}
+        totalSlides={3}
+      >
+        <Slider>
+          <Slide index={0}>I am the first Slide.</Slide>
+          <Slide index={1}>I am the second Slide.</Slide>
+          <Slide index={2}>I am the third Slide.</Slide>
+        </Slider>
+      </CarouselProvider>
     );
   }
 }
