@@ -17,12 +17,13 @@
 - [ ] Doc and present about Husky and Security As code.
 - [x] Restructure style as `StyledComponent` lib. CSS in JS
 - [x] pass components into desktop-stack.layout @dieu.
-- [x] implment layout structure, @khanh
-- [x] Get feed back from team, @quan @dieu
+- [x] implment layout structure, `@khanh`
+- [x] Get feed back from team, `@quan @dieu`
 - [x] Intergrate and set strategy for StoryBook
 - [x] Set up tool for devENV
 - [ ] Setup CI/CD
 - [ ] Setup Devops pipe tool
+- [ ] Contribute conduct `@quan`
 
 ## Next project structure
 
