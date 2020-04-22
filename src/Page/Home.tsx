@@ -8,6 +8,8 @@ import LatestNewsComponent from "../Components/Section/LatestNewsComponent/Lates
 import SubmitForm from "../Components/Section/SubmitForm/InputForm";
 import Footer from "../Components/Section/Footer/Footer";
 import { LayoutItemType, KaoComponent } from "../Types/LayoutItem";
+import HeroSection from "../Components/Section/HeroSection/HeroSection";
+import TeamSection from "../Components/Section/TeamSection/TeamSection";
 
 /**
  * As clean process data 1st is define on component as []
@@ -20,10 +22,10 @@ const HomePage = () => {
       type: LayoutItemType.Nav,
       component: <MenuItem />,
     },
-    // {
-    //   type: LayoutItemType.Section,
-    //   component: <LatestNewsComponent />,
-    // },
+    {
+      type: LayoutItemType.Section,
+      component: <HeroSection />,
+    },
     {
       type: LayoutItemType.SectionAbout,
       component: <SectionAbout />,
@@ -39,6 +41,10 @@ const HomePage = () => {
     {
       type: LayoutItemType.SectionLatestNews,
       component: <LatestNewsComponent />,
+    },
+    {
+      type: LayoutItemType.Section,
+      component: <TeamSection />,
     },
     {
       type: LayoutItemType.Form,

@@ -16,9 +16,9 @@ const SectionVerbal: FunctionComponent<SectionVerbalProps> = ({
   subHeader,
 }) => {
   return (
-    <Header as="h2" style={verbalStyle}>
+    <Header as="h2">
       {header}
-      <Header.Subheader>{subHeader}</Header.Subheader>
+      <Header.Subheader style={verbalStyle}>{subHeader}</Header.Subheader>
     </Header>
   );
 };
