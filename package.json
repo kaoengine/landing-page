@@ -1,7 +1,9 @@
 {
   "name": "kao-landing-page",
-  "version": "0.0.1-18",
+  "version": "0.0.1-12",
   "description": "Kao Landing page",
+  "author": "Kao Enginee <kaoengine@gmail.com>",
+  "license": "MIT",
   "private": true,
   "dependencies": {
     "@stardust-ui/docs-components": "^0.40.0",
@@ -71,5 +73,13 @@
     "@types/styled-components": "^5.1.0",
     "eslint-plugin-react-hooks": "^3.0.0",
     "husky": "^4.2.5"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kaoengine/landing-page"
+  },
+  "bugs": {
+    "url": "https://github.com/kaoengine/landing-page/issue"
+  },
+  "homepage": "https://studio.kaoengine.com"
 }
