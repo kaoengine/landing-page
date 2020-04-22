@@ -25,7 +25,8 @@
 - [ ] Setup Devops pipe tool
 - [ ] Contribute conduct `@quan`
 - [ ] Contribute for /docs/GetStarted.md `@dieu`
-
+- [ ] Introduce Plax `@khanh`
+ 
 ## Next project structure
 
 - [ ] Apply super productivity with github
