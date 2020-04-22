@@ -1,6 +1,7 @@
 {
   "name": "kao-landing-page",
-  "version": "0.1.0",
+  "version": "0.0.1-18",
+  "description": "Kao Landing page",
   "private": true,
   "dependencies": {
     "@stardust-ui/docs-components": "^0.40.0",
@@ -33,7 +34,9 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 9009 -s public",
-    "build-storybook": "build-storybook -s public"
+    "build-storybook": "build-storybook -s public",
+    "prepare": "babel src -d dist --ignore __tests__ && yarn run fmt",
+    "dev": "start-storybook -p 9009 -c .storybook"
   },
   "eslintConfig": {
     "extends": "react-app"
