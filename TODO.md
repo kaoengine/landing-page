@@ -24,6 +24,7 @@
 - [ ] Setup CI/CD
 - [ ] Setup Devops pipe tool
 - [ ] Contribute conduct `@quan`
+- [ ] Contribute for /docs/GetStarted.md `@dieu`
 
 ## Next project structure
 
