@@ -1,5 +1,13 @@
 # Todo list
 
+## Goal
+- [ ] UI | ``25 Deadline``
+- [ ] State |  ``29 Deadline``
+- [ ] Performance |  ``May 5 Deadline``
+- [ ] Security | ``May 1 Deadline``
+- [ ] GraphQL  | ``May 3 Deadline``
+- [ ] Framework Intergate Gastbyjs | Nextjs | PHP Laravel | .netCore ``May 5 Deadline``
+
 ## Next present
 
 - [x] 10/4 BEM
@@ -8,10 +16,12 @@
 
 ## Next tasks
 
-- [ ] Define smart template | Data architect
+- [x] Define smart template | Data architect
 - [x] Use template for HomePage
 - [ ] Template Retrospective 
 - [x] Apply CSS BEM architect
+- [ ] Styled-System integrate
+- [ ] Build Type-System
 - [ ] Khanh implment task.
 - [x] Integrate with Husky
 - [ ] Doc and present about Husky and Security As code.
