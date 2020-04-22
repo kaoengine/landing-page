@@ -23,20 +23,6 @@ const photos = [
 ];
 
 class Carousel extends React.Component {
-  state = { swiper: "" };
-  componentDidMount = () => {
-    const swiperConfig = {
-      slidesPerView: 4,
-      centeredSlides: true,
-      spaceBetween: 30,
-      grabCursor: true,
-      pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-      },
-    };
-  };
-
   public render() {
     return (
       <CarouselProvider
