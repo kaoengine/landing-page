@@ -16,6 +16,9 @@ const layoutLogic: any = {
   [LayoutItemType.SectionFeature]: (component: any) => (
     <Fragment>{component}</Fragment>
   ),
+  [LayoutItemType.SectionDownload]: (component: any) => (
+    <Fragment>{component}</Fragment>
+  ),
   [LayoutItemType.SectionPricing]: (component: any) => (
     <Fragment>{component}</Fragment>
   ),
