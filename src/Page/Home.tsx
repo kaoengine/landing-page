@@ -10,6 +10,7 @@ import Footer from "../Components/Section/Footer/Footer";
 import { LayoutItemType, KaoComponent } from "../Types/LayoutItem";
 import HeroSection from "../Components/Section/HeroSection/HeroSection";
 import TeamSection from "../Components/Section/TeamSection/TeamSection";
+import DownloadSection from "Components/Section/DownloadSection";
 
 /**
  * As clean process data 1st is define on component as []
@@ -33,6 +34,10 @@ const HomePage = () => {
     {
       type: LayoutItemType.SectionFeature,
       component: <SectionFeatures />,
+    },
+    {
+      type: LayoutItemType.SectionFeature,
+      component: <DownloadSection />,
     },
     {
       type: LayoutItemType.SectionPricing,
