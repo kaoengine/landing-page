@@ -5,6 +5,7 @@ export enum LayoutItemType {
   Section = "Section",
   SectionAbout = "SectionAbout",
   SectionFeature = "SectionFeature",
+  SectionDownload = "SectionDownload",
   SectionPricing = "SectionPricing",
   SectionLatestNews = "SecLatestNews",
   Form = "Form",
@@ -16,4 +17,3 @@ export type KaoComponent = {
   type: LayoutItemType;
   component: ReactElement;
 };
-
