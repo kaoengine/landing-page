@@ -1,6 +1,5 @@
 import React from "react";
 
-import "./Form-input.scss";
 import { Grid, Icon } from "semantic-ui-react";
 import Styled from "styled-components";
 

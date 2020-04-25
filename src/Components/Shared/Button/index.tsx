@@ -1,8 +1,6 @@
 /* eslint-disable react/jsx-pascal-case */
 import * as React from "react";
 import { Container } from "semantic-ui-react";
-
-// import "./ButtonComponent.scss";
 import styled, { css } from "styled-components";
 interface iState {
   buttonName: string;
