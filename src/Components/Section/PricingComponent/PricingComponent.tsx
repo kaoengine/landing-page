@@ -20,7 +20,7 @@ const Wrapper = styled.div`
 class PricingComponent extends React.Component {
   render() {
     return (
-      <Wrapper>
+      <Wrapper id="pricing">
         <Container>
           <Grid>
             <Grid.Row textAlign="center" centered>

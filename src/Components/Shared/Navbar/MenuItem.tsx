@@ -7,11 +7,11 @@ import Logo from "../Logo/Logo";
 import { Badget, Color } from "../Badget";
 
 const NavbarItems = [
-  { name: "Home" },
-  { name: "About" },
-  { name: "Features" },
-  { name: "Pricing" },
-  { name: "Screenshots" },
+  {name: "Home", link: "/" },
+  { name: "About", link: "#about" },
+  { name: "Features", link: "#feature" },
+  { name: "Pricing", link: "#pricing" },
+  { name: "Screenshots", link: "#news" },
   {
     name: "Pages",
     subMenu: [
@@ -21,14 +21,20 @@ const NavbarItems = [
     ],
   },
   { name: "Blog" },
-  { name: "Team" },
-  { name: "Contact" },
+  { name: "Team", link: "#team"},
+  { name: "Contact", link: "#contact" },
 ];
 
 const Wrapper = styled.div`
   display: flex;
   justify-content: space-around;
-  background: #6610f2;
+  background-image: linear-gradient(to right, rgba(32, 40, 119, 1), rgba(55, 46, 149, 1), 
+  rgba(83, 49, 177, 1), rgba(114, 48, 205, 1), rgba(150, 41, 230, 1)) !important;
+  position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1030;
 `;
 const WrapperA = styled.a`
   list-style-type: none;
@@ -42,47 +48,41 @@ class MenuItem extends Component {
         <Menu secondary size="large">
           <Menu.Menu>
             <Menu.Item>
-              <Logo />
+              <a href="/"><Logo /></a>
             </Menu.Item>
           </Menu.Menu>
           <Menu.Menu>
             {NavbarItems.map((NavbarItem) => {
               return NavbarItem.name === "Pages" ? (
-                <Router>
-                  <Dropdown
-                    className="link item"
-                    text={NavbarItem.name}
-                    style={{ color: "#fff" }}
-                  >
-                    <Dropdown.Menu>
-                      <Dropdown.Item>
-                        <Link to="/signin">Sign In</Link>
-                      </Dropdown.Item>
-                      <Dropdown.Item>Page2</Dropdown.Item>
-                    </Dropdown.Menu>
-                  </Dropdown>
-                </Router>
+                <Dropdown
+                  className="link item"
+                  text={NavbarItem.name}
+                  style={{ color: "#fff" }}
+                >
+                  <Dropdown.Menu>
+                    <Dropdown.Item>
+                      <Link to="/signin">Sign In</Link>
+                    </Dropdown.Item>
+                    <Dropdown.Item>Page2</Dropdown.Item>
+                  </Dropdown.Menu>
+                </Dropdown>
               ) : NavbarItem.name === "Blog" ? (
-                <Router>
-                  <Dropdown
-                    className="link item"
-                    text={NavbarItem.name}
-                    style={{ color: "#fff" }}
-                  >
-                    <Dropdown.Menu>
-                      <Dropdown.Item>Blog1</Dropdown.Item>
-                      <Dropdown.Item>Blog2</Dropdown.Item>
-                    </Dropdown.Menu>
-                  </Dropdown>
-                  <Badget title={"New"} color={Color.Red} />
-                </Router>
+                <Dropdown
+                  className="link item"
+                  text={NavbarItem.name}
+                  style={{ color: "#fff" }}
+                >
+                  <Dropdown.Menu>
+                    <Dropdown.Item>Blog1</Dropdown.Item>
+                    <Dropdown.Item>Blog2</Dropdown.Item>
+                  </Dropdown.Menu>
+                </Dropdown>
+                // <Badget title={"New"} color={Color.Red} />
               ) : (
-                <Router>
-                  <Menu.Item className="menu-item">
-                    <WrapperA>{NavbarItem.name}</WrapperA>
-                  </Menu.Item>
-                </Router>
-              );
+                    <Menu.Item className="menu-item">
+                      <WrapperA href={NavbarItem.link}>{NavbarItem.name}</WrapperA>
+                    </Menu.Item>
+                  );
             })}
           </Menu.Menu>
         </Menu>
