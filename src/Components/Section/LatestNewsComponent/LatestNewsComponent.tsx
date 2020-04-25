@@ -8,7 +8,7 @@ import styled from "styled-components";
 class LatestNewsComponent extends React.Component {
   render() {
     return (
-      <Container>
+      <Container id="news">
         <Grid>
           <Grid.Row centered>
             <SectionVerbal

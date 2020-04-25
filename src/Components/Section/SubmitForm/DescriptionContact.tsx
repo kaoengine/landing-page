@@ -5,7 +5,7 @@ import SectionVerbal from "../../Shared/SectionVerbal";
 class DescriptionContact extends React.Component {
   public render() {
     return (
-      <Grid>
+      <Grid id="contact">
         <Grid.Row>
           <SectionVerbal
             header="Contact with us"

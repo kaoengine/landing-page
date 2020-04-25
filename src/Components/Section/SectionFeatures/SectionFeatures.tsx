@@ -25,7 +25,7 @@ const IconWrapper = styled.div`
 class SectionFeatures extends React.Component {
   render() {
     return (
-      <Wrapper>
+      <Wrapper id="feature">
         <Container>
           <Grid>
             <Grid.Row columns={2} verticalAlign="middle">
