@@ -22,7 +22,7 @@ export const ImageWrapper = styled.div`
 class SectionAbout extends React.Component {
   render() {
     return (
-      <Wrapper>
+      <Wrapper id="about">
         <Container>
           <Grid>
             <Grid.Row columns={2}>

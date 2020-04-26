@@ -48,3 +48,6 @@
 .ui.inverted.menu {
   background-color: blue;
 }
+html {
+  scroll-behavior: smooth;
+}

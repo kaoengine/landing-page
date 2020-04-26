@@ -1,13 +1,52 @@
-import React, { SyntheticEvent } from "react";
+import React from "react";
 import FormInput from "../Form-input/Form-input";
 import ButtonComponent from '../Button';
+import InfoComponent from '../InfoComponent/InfoComponent';
 
-import "./Login.scss";
+import Styled from 'styled-components';
+import { Grid } from '@material-ui/core';
+
+
 
 type iState = {
   email: string;
   password: string;
 }
+
+const Wrapper = Styled.div`
+  padding: 0 3rem;
+  margin: 3em 0;
+ `;
+const Header = Styled.div`
+    text-align: center;
+ `;
+const Heading = Styled.h2`
+  font-size: 2rem;
+  color: #212529;
+`;
+const Information = Styled.p`
+  font-size: 1em;
+`;
+const SmallInfo = Styled(Information)`
+  font-size: .9em;
+  text-align: center;
+  color: #6c757d;
+`;
+const Form = Styled.form`
+  position: relative;
+`;
+const FormGroup = Styled.div`
+  margin-bottom: 1rem;
+
+`;
+const Label = Styled.label`
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  font-size: 88%;
+`;
+const ATag = Styled.a``;
+
+
 
 class Login extends React.Component<any, iState> {
   state: iState = {
@@ -19,18 +58,30 @@ class Login extends React.Component<any, iState> {
     const { value } = event.target;
     this.setState({ 'email': value });
   };
+   loginDetail = {
+    title: "Welcome Back !",
+    imageUrl: 'img/hero-bg-1.jpg',
+    detail: "Keep your face always toward the sunshine - and shadows will fall behind you. Continually pursue fully researched niches whereas timely platforms. Credibly parallel task optimal catalysts for change after focused catalysts for change."
+};
 
   render() {
     const { email, password } = this.state;
     return (
-      <div className="login-signup-wrap px-4 px-lg-5 my-5">
-        {/* <!-- Heading --> */}
-        <h1 className="text-center mb-1">Sign In</h1>
-        <p className="text-center mb-5">Free access to our dashboard.</p>
-
-        {/* <!--login form--> */}
-        <form className="login-signup-form">
-          <div className="form-group">
+      <Grid container spacing={3}>
+                <Grid item md={8} xs sm>
+                    <InfoComponent
+                        title={this.loginDetail.title}
+                        detail={this.loginDetail.detail}
+                        imageUrl={this.loginDetail.imageUrl} />
+                </Grid>
+                <Grid item md={4} xs={12}>
+                <Wrapper>
+        <Header>
+          <Heading>Sign In</Heading>
+          <Information>Free access to our dashboard.</Information>
+        </Header>
+        <Form>
+          <FormGroup>
             <FormInput
               name="email"
               type="text"
@@ -42,22 +93,17 @@ class Login extends React.Component<any, iState> {
               placeholder="name@yourdomain.com"
               required
             />
-          </div>
-          {/* <!-- Password --> */}
-          <div className="form-group">
-            <div className="row">
-              <div className="col">
-                <label className="pb-1">Password</label>
-              </div>
-              <div className="col-auto">
-                <a
-                  href="/"
-                  className="form-text small text-muted"
-                >
-                  Forgot password?
-                </a>
-              </div>
-            </div>
+          </FormGroup>
+          <FormGroup>
+            <Grid container spacing={3}>
+              <Grid item md={6} sm xs>
+                <Label>Password</Label>
+              </Grid>
+              <Grid item md={6} sm xs style={{textAlign: 'right'}}>
+                <ATag href="/">Forgot password?</ATag>
+              </Grid>
+            </Grid>
+
             <FormInput
               name="password"
               type="password"
@@ -69,22 +115,18 @@ class Login extends React.Component<any, iState> {
               placeholder="Enter your password"
               required
             />
-          </div>
-
-          {/* <!-- Submit --> */}
-          {/* <button className="btn btn-lg btn-block solid-btn border-radius mt-4 mb-3">
-            Sign in
-          </button> */}
-
-          <ButtonComponent className="btn btn-lg btn-block solid-btn border-radius mt-4 mb-3" buttonName="Sign in" />
-          {/* <!-- Link --> */}
-          <p className="text-center">
-            <small className="text-muted text-center">
-              Don't have an account yet? <a href="sign-up.html">Sign up</a>.
-            </small>
-          </p>
-        </form>
-      </div>
+          </FormGroup>
+          <ButtonComponent classType="signin" buttonName="Sign in" />
+            <Information>
+              <SmallInfo>
+                  Don't have an account yet? <ATag href="/">Sign up</ATag>.
+              </SmallInfo>
+            </Information>
+        </Form>
+      </Wrapper>
+                </Grid>
+            </Grid>
+      
     );
   }
 }

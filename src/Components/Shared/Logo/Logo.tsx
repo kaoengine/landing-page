@@ -7,13 +7,9 @@ class Logo extends React.Component{
             height: 'auto',
             maxWidth: '100%',
         }
-
-        const img = {
-            backgroundColor: '#6610f2'
-        }
         return (
             <div style={DivimageFluid}>
-                <img style={img} src='/img/AppCo-logo.png' alt="Appco"/>
+                <img src='/img/AppCo-logo.png' alt="Appco"/>
             </div>
         )
     }

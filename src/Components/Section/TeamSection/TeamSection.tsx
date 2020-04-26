@@ -53,7 +53,7 @@ class TeamSection extends React.Component {
   ));
   render() {
     return (
-      <Wrapper>
+      <Wrapper id="team">
         <Container>
           <Grid>
             <Grid.Row textAlign="justified">

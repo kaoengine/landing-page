@@ -20,10 +20,6 @@ import DownloadSection from "Components/Section/DownloadSection";
 const HomePage = () => {
   let homeComponents: Array<KaoComponent> = [
     {
-      type: LayoutItemType.Nav,
-      component: <MenuItem />,
-    },
-    {
       type: LayoutItemType.Section,
       component: <HeroSection />,
     },
