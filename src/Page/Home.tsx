@@ -12,6 +12,13 @@ import HeroSection from "../Components/Section/HeroSection/HeroSection";
 import TeamSection from "../Components/Section/TeamSection/TeamSection";
 import DownloadSection from "Components/Section/DownloadSection";
 
+import {
+  BrowserView,
+  MobileView,
+  isBrowser,
+  isMobile,
+} from "react-device-detect";
+import MobileLayout from "Layout/mobile-sm.layout";
 /**
  * As clean process data 1st is define on component as []
  * then when data is bigger we can split out as module.
@@ -58,8 +65,13 @@ const HomePage = () => {
   ];
   return (
     <Fragment>
-      <DesktopStackLayout components={homeComponents} />
-      {/* define the environment -> render */}
+      <BrowserView>
+        <DesktopStackLayout components={homeComponents} />
+        {/* define the environment -> render */}
+      </BrowserView>
+      <MobileView>
+        <MobileLayout components={homeComponents} />
+      </MobileView>
     </Fragment>
   );
 };

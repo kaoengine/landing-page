@@ -22,6 +22,7 @@
     "palx": "^1.0.3",
     "pure-react-carousel": "^1.27.0",
     "react": "^16.13.1",
+    "react-device-detect": "^1.12.0",
     "react-dom": "^16.13.1",
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.4.1",
@@ -57,12 +58,6 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm test",
-      "pre-push": "npm test"
-    }
   },
   "devDependencies": {
     "@storybook/addon-actions": "^5.3.18",
