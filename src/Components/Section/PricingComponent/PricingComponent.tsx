@@ -1,7 +1,7 @@
 import * as React from "react";
 import { Grid, Container } from "semantic-ui-react";
 import SectionVerbal from "../../Shared/SectionVerbal";
-import CardWithPurchaseButton from "../../Shared/CardWithPurchaseButton/CardWithPurchaseButton";
+import CardWithPurchaseButton from "../../Shared/CardWithPurchaseButton";
 import AccordionComponent from "../../Shared/AccordionComponent/AccordionComponent";
 
 import styled from "styled-components";

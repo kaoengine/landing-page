@@ -1,20 +1,33 @@
 /* eslint-disable react/jsx-pascal-case */
 import * as React from "react";
+
 import { Container } from "semantic-ui-react";
 import styled, { css } from "styled-components";
+
+export enum Icons {
+  Android = "android",
+  Apple = "apple",
+}
 interface iState {
   buttonName: string;
   className?: string;
   classType?: string;
 }
 
-const ButtonWapper: any = styled.div`
+const Wrapper = styled.div`
+  display: inline-block;
+  width: auto;
+  height: auto;
+`;
+
+const StyledButton: any = styled.button`
   border-radius: 25px;
   font-size: 15px;
   line-height: 15px;
   color: #6730e3;
   display: inline-block;
   padding: 10px 25px;
+  margin-right: 1rem;
   border: 2px solid #6730e3;
   text-align: center;
   cursor: pointer;
@@ -61,6 +74,7 @@ const ButtonWapper: any = styled.div`
 `;
 class Button extends React.Component<iState> {
   render() {
+    const { buttonName, Icons } = this.props;
     return (
       <Container>
         <ButtonWapper active classType={this.props.classType}>{this.props.buttonName}</ButtonWapper>
