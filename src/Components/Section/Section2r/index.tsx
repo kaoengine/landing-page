@@ -5,7 +5,7 @@ import SectionVerbal from "../../Shared/SectionVerbal";
 type Section2rr23cProps = {
   header: string;
   subHeader: string;
-  component: ReactElement[] | ReactElement
+  component: ReactElement[] | ReactElement;
 };
 
 export const Section2r: FunctionComponent<Section2rr23cProps> = ({
