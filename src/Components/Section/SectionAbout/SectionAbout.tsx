@@ -11,9 +11,23 @@ const Wrapper = styled.div`
   background: url("/img/about-bg-shape.svg");
   background-repeat: no-repeat;
   background-size: cover;
-  padding: 10em 0 0 0;
+  padding: 8em 0 0 0;
+  margin-top: 1em;
+  box-sizing: border-box;
+
+  //mobile responsive
+  @media only screen and (min-width: 320px) {
+    box-sizing: border-box;
+    padding: 0 1em;
+    margin-bottom: 20px;
+  }
 `;
 
+const WrapperFlex = styled.div`
+  display: flex;
+  align-items: center;
+  margin: 2em 0;
+`;
 export const ImageWrapper = styled.div`
   display: flex;
   justify-content: center;
@@ -24,7 +38,7 @@ class SectionAbout extends React.Component {
     return (
       <Wrapper id="about">
         <Container>
-          <Grid>
+          <Grid stackable>
             <Grid.Row columns={2}>
               <Grid.Column>
                 <Grid.Row>
@@ -34,16 +48,18 @@ class SectionAbout extends React.Component {
                   />
                 </Grid.Row>
                 <Grid.Row columns={2}>
-                  <Grid.Column computer={4}>
-                    <IconImage />
-                  </Grid.Column>
-                  <Grid.Column computer={12}>
-                    <Tile
-                      content={
-                        "Proactively syndicate open-source e-markets after low-risk high-yield synergy. Professionally simplify visionary technology."
-                      }
-                    />
-                  </Grid.Column>
+                  <WrapperFlex>
+                    <Grid.Column computer={2}>
+                      <IconImage />
+                    </Grid.Column>
+                    <Grid.Column computer={14}>
+                      <Tile
+                        content={
+                          "Proactively syndicate open-source e-markets after low-risk high-yield synergy. Professionally simplify visionary technology."
+                        }
+                      />
+                    </Grid.Column>
+                  </WrapperFlex>
                 </Grid.Row>
               </Grid.Column>
               <Grid.Column>
