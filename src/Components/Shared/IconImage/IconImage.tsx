@@ -7,8 +7,8 @@ const StyledIcon = styled.div`
   width: 65px;
   height: 65px;
   boxshadow: 0 30px 40px 0 rgba(52, 27, 159, 0.1);
-  margin-right: 15px;
   background: #fff;
+  margin-right: 10px;
   text-align: center;
 `;
 
