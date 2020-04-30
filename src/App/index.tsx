@@ -2,13 +2,8 @@ import * as React from "react";
 import "./App.css";
 import Home from "../Page/Home";
 import SignInAndSignUp from "../Page/sign-in-and-sign-up/sign-in-and-sign-up";
-import MenuItem from "../Components/Shared/Navbar/MenuItem";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
-} from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import MenuContainer from "Components/Shared/Navbar/MenuContainer";
 
 type iState = {
   visible: boolean;
@@ -22,27 +17,13 @@ class App extends React.Component<any, iState> {
 
   public render() {
     return (
-      <div className="App">
-        <Router>
-      <div>
-        <MenuItem />
-
+      <Router>
+        <MenuContainer />
         <Switch>
-        <Route exact path="/" component={Home} />
-              <Route exact path="/signin" component={SignInAndSignUp} />
+          <Route exact path="/" component={Home} />
+          <Route exact path="/signin" component={SignInAndSignUp} />
         </Switch>
-      </div>
-    </Router>
-
-        {/* <BrowserRouter>
-          <div>
-            <Switch>
-              <Route exact path="/" component={Home} />
-              <Route exact path="/signin" component={SignInAndSignUp} />
-            </Switch>
-          </div>
-        </BrowserRouter> */}
-      </div>
+      </Router>
     );
   }
 }
