@@ -13,8 +13,15 @@ const Wrapper = styled.div`
   background-repeat: no-repeat;
   background-size: cover;
   padding: 10em 0 0 0;
-  .fifteen.wide.column{
+  .fifteen.wide.column {
     align-self: center;
+  }
+
+  //  sizing mobile responsive
+  @media only screen and (min-width: 320px) {
+    box-sizing: border-box;
+    padding: 8em 1em;
+    margin-bottom: 20px;
   }
 `;
 
@@ -44,7 +51,7 @@ class HeroSection extends React.Component {
     return (
       <Wrapper>
         <Container>
-          <Grid columns={2} centered>
+          <Grid stackable columns={2} centered>
             <Grid.Column>
               <Grid>
                 <Grid.Row>
@@ -60,7 +67,11 @@ class HeroSection extends React.Component {
                 <Grid.Row>
                   <Grid.Column>
                     <InputWapper>
-                      <Input type="text" placeholder="info@yourdomain.com" action>
+                      <Input
+                        type="text"
+                        placeholder="info@yourdomain.com"
+                        action
+                      >
                         <input />
                         <Button
                           className="btn btn-lg btn-block solid-btn border-radius mt-4 mb-3"
@@ -71,10 +82,10 @@ class HeroSection extends React.Component {
                   </Grid.Column>
                 </Grid.Row>
                 <Grid.Row columns={2}>
-                  <Grid.Column width={1}>
+                  <Grid.Column width={2}>
                     <_Button circular icon="play" />
                   </Grid.Column>
-                  <Grid.Column width={15}>
+                  <Grid.Column width={14} verticalAlign="middle">
                     <Tile content={"Watch Video Overview."} />
                   </Grid.Column>
                 </Grid.Row>
