@@ -1,6 +1,7 @@
 import { ReactElement } from "react";
 
 export enum LayoutItemType {
+  SideBar = "SideBar",
   Nav = "Nav",
   Section = "Section",
   SectionAbout = "SectionAbout",
