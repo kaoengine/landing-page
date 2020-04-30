@@ -1,6 +1,5 @@
-import React, { Fragment, ReactElement } from "react";
-import DesktopStackLayout from "../Layout/desktop-stack.layout";
-import MenuItem from "../Components/Shared/Navbar/MenuItem";
+import React, { Fragment } from "react";
+import MenuItem from "../Components/Shared/Navbar/MenuItemDesktop";
 import SectionAbout from "../Components/Section/SectionAbout/SectionAbout";
 import SectionFeatures from "../Components/Section/SectionFeatures/SectionFeatures";
 import PricingComponent from "../Components/Section/PricingComponent/PricingComponent";
@@ -12,68 +11,70 @@ import HeroSection from "../Components/Section/HeroSection/HeroSection";
 import TeamSection from "../Components/Section/TeamSection/TeamSection";
 import DownloadSection from "Components/Section/DownloadSection";
 
-import {
-  BrowserView,
-  MobileView,
-  isBrowser,
-  isMobile,
-} from "react-device-detect";
+import { BrowserView, MobileView } from "react-device-detect";
+import DesktopStackLayout from "../Layout/desktop-stack.layout";
 import MobileLayout from "Layout/mobile-sm.layout";
+import MenuContainer from "Components/Shared/Navbar/MenuContainer";
+
 /**
  * As clean process data 1st is define on component as []
  * then when data is bigger we can split out as module.
  */
-
-const HomePage = () => {
-  let homeComponents: Array<KaoComponent> = [
-    {
-      type: LayoutItemType.Section,
-      component: <HeroSection />,
-    },
-    {
-      type: LayoutItemType.SectionAbout,
-      component: <SectionAbout />,
-    },
-    {
-      type: LayoutItemType.SectionFeature,
-      component: <SectionFeatures />,
-    },
-    {
-      type: LayoutItemType.SectionFeature,
-      component: <DownloadSection />,
-    },
-    {
-      type: LayoutItemType.SectionPricing,
-      component: <PricingComponent />,
-    },
-    {
-      type: LayoutItemType.SectionLatestNews,
-      component: <LatestNewsComponent />,
-    },
-    {
-      type: LayoutItemType.Section,
-      component: <TeamSection />,
-    },
-    {
-      type: LayoutItemType.Form,
-      component: <SubmitForm />,
-    },
-    {
-      type: LayoutItemType.Footer,
-      component: <Footer />,
-    },
-  ];
-  return (
-    <Fragment>
-      <BrowserView>
-        <DesktopStackLayout components={homeComponents} />
-        {/* define the environment -> render */}
-      </BrowserView>
-      <MobileView>
-        <MobileLayout components={homeComponents} />
-      </MobileView>
-    </Fragment>
-  );
-};
+const homeComponents: Array<KaoComponent> = [
+  // {
+  //   type: LayoutItemType.Nav,
+  //   component: <MenuContainer />,
+  // },
+  {
+    type: LayoutItemType.Section,
+    component: <HeroSection />,
+  },
+  {
+    type: LayoutItemType.SectionAbout,
+    component: <SectionAbout />,
+  },
+  {
+    type: LayoutItemType.SectionFeature,
+    component: <SectionFeatures />,
+  },
+  {
+    type: LayoutItemType.SectionFeature,
+    component: <DownloadSection />,
+  },
+  {
+    type: LayoutItemType.SectionPricing,
+    component: <PricingComponent />,
+  },
+  {
+    type: LayoutItemType.SectionLatestNews,
+    component: <LatestNewsComponent />,
+  },
+  {
+    type: LayoutItemType.Section,
+    component: <TeamSection />,
+  },
+  {
+    type: LayoutItemType.Form,
+    component: <SubmitForm />,
+  },
+  {
+    type: LayoutItemType.Footer,
+    component: <Footer />,
+  },
+];
+class HomePage extends React.Component {
+  render() {
+    return (
+      <Fragment>
+        <BrowserView>
+          <DesktopStackLayout components={homeComponents} />
+        </BrowserView>
+        <MobileView>
+          <MobileLayout components={homeComponents} />
+        </MobileView>
+      </Fragment>
+    );
+  }
+}
 
 export default HomePage;
