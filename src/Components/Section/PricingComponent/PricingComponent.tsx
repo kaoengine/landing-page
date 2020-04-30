@@ -22,14 +22,14 @@ class PricingComponent extends React.Component {
     return (
       <Wrapper id="pricing">
         <Container>
-          <Grid>
-            <Grid.Row textAlign="center" centered>
+          <Grid stackable textAlign="center">
+            <Grid.Row>
               <SectionVerbal
                 header={"Afforadble Pricing and Packages"}
                 subHeader={"choose your best one"}
               />
             </Grid.Row>
-            <Grid.Row centered>
+            <Grid.Row>
               <p>
                 Monotonectally grow strategic process improvements vis-a-vis
                 integrated resources.

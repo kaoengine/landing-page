@@ -2,12 +2,11 @@ import React, { Component } from "react";
 import { Menu, Dropdown } from "semantic-ui-react";
 
 import styled from "styled-components";
-import { BrowserRouter as Router, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Logo from "../Logo/Logo";
-import { Badget, Color } from "../Badget";
 
 const NavbarItems = [
-  {name: "Home", link: "/" },
+  { name: "Home", link: "/" },
   { name: "About", link: "#about" },
   { name: "Features", link: "#feature" },
   { name: "Pricing", link: "#pricing" },
@@ -21,20 +20,26 @@ const NavbarItems = [
     ],
   },
   { name: "Blog" },
-  { name: "Team", link: "#team"},
+  { name: "Team", link: "#team" },
   { name: "Contact", link: "#contact" },
 ];
 
 const Wrapper = styled.div`
   display: flex;
   justify-content: space-around;
-  background-image: linear-gradient(to right, rgba(32, 40, 119, 1), rgba(55, 46, 149, 1), 
-  rgba(83, 49, 177, 1), rgba(114, 48, 205, 1), rgba(150, 41, 230, 1)) !important;
+  background-image: linear-gradient(
+    to right,
+    rgba(32, 40, 119, 1),
+    rgba(55, 46, 149, 1),
+    rgba(83, 49, 177, 1),
+    rgba(114, 48, 205, 1),
+    rgba(150, 41, 230, 1)
+  );
   position: fixed;
-    top: 0;
-    right: 0;
-    left: 0;
-    z-index: 1030;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1030;
 `;
 const WrapperA = styled.a`
   list-style-type: none;
@@ -48,7 +53,9 @@ class MenuItem extends Component {
         <Menu secondary size="large">
           <Menu.Menu>
             <Menu.Item>
-              <a href="/"><Logo /></a>
+              <Link to="/">
+                <Logo />
+              </Link>
             </Menu.Item>
           </Menu.Menu>
           <Menu.Menu>
@@ -77,12 +84,12 @@ class MenuItem extends Component {
                     <Dropdown.Item>Blog2</Dropdown.Item>
                   </Dropdown.Menu>
                 </Dropdown>
-                // <Badget title={"New"} color={Color.Red} />
               ) : (
-                    <Menu.Item className="menu-item">
-                      <WrapperA href={NavbarItem.link}>{NavbarItem.name}</WrapperA>
-                    </Menu.Item>
-                  );
+                // <Badget title={"New"} color={Color.Red} />
+                <Menu.Item className="menu-item">
+                  <WrapperA href={NavbarItem.link}>{NavbarItem.name}</WrapperA>
+                </Menu.Item>
+              );
             })}
           </Menu.Menu>
         </Menu>

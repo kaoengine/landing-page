@@ -35,7 +35,7 @@ class Footer extends React.Component {
     };
     return (
       <Container style={flexRow}>
-        <Grid divided="vertically">
+        <Grid stackable>
           <Grid.Row columns={4}>
             <Grid.Column style={flexColumn}>
               <Logo />

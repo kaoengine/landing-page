@@ -8,6 +8,12 @@ import Button from "../../Shared/Button";
 const Wrapper = styled.div`
   background: #f8f9fa;
   padding: 80px 0;
+  @media only screen and (min-width: 320px) {
+    box-sizing: border-box;
+    padding: 5em 1em;
+    margin-top: 5em;
+    margin-bottom: 5em;
+  }
 `;
 
 class InputForm extends React.Component {
@@ -15,7 +21,7 @@ class InputForm extends React.Component {
     return (
       <Wrapper>
         <Container>
-          <Grid>
+          <Grid stackable>
             <Grid.Row columns={2}>
               <Grid.Column computer={7}>
                 <DescriptionContact />

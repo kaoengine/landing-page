@@ -10,7 +10,13 @@ import { Grid, Container } from "semantic-ui-react";
 
 const Wrapper = styled.div`
   background: #f8f9fa;
-  padding: 100px 0;
+  padding: 10em 0 2em 0;
+
+  @media only screen and (min-width: 320px) {
+    box-sizing: border-box;
+    padding: 0 1em;
+    margin-bottom: 20px;
+  }
 `;
 
 const ImageWrapper = styled.div`
@@ -19,15 +25,15 @@ const ImageWrapper = styled.div`
   height: 35em;
 `;
 
-const IconWrapper = styled.div`
-  margin-top: 3em;
+const ParaWrapper = styled.p`
+  margin-bottom: 1.25em;
 `;
 class SectionFeatures extends React.Component {
   render() {
     return (
       <Wrapper id="feature">
         <Container>
-          <Grid>
+          <Grid stackable>
             <Grid.Row columns={2} verticalAlign="middle">
               <Grid.Column>
                 <ImageWrapper>
@@ -39,19 +45,21 @@ class SectionFeatures extends React.Component {
                   header={"Share your photos with"}
                   subHeader={"friends easily"}
                 />
-                <Tile
-                  content={
-                    "Objectively deliver professional value with diverse web-readiness. Collaboratively transition wireless customer service without goal-oriented catalysts for change. Collaboratively."
-                  }
-                />
-                <Tile
-                  content={
-                    "Uniquely simplify sustainable applications whereas adaptive schemas. Competently brand performance based content and."
-                  }
-                />
-                <IconWrapper>
-                  <CardFancy />
-                </IconWrapper>
+                <ParaWrapper>
+                  <Tile
+                    content={
+                      "Objectively deliver professional value with diverse web-readiness. Collaboratively transition wireless customer service without goal-oriented catalysts for change. Collaboratively."
+                    }
+                  />
+                </ParaWrapper>
+                <ParaWrapper>
+                  <Tile
+                    content={
+                      "Uniquely simplify sustainable applications whereas adaptive schemas. Competently brand performance based content and."
+                    }
+                  />
+                </ParaWrapper>
+                <CardFancy />
               </Grid.Column>
             </Grid.Row>
           </Grid>

@@ -1,5 +1,6 @@
 import React, { Fragment } from "react";
-import { Container } from "semantic-ui-react";
+import { Sticky } from "semantic-ui-react";
+import { LayoutItemType, KaoComponent } from "Types/LayoutItem";
 
 /**
  * The fixed navigation
@@ -7,24 +8,35 @@ import { Container } from "semantic-ui-react";
  * @version 1.0.1
  * @author [Khanh Tran](https://github.com/khanhtran8)
  */
-const LayoutSegment = (componentObject: any) => {
-  const { type, component } = componentObject;
 
-  switch (type) {
-    case "nav":
-      return (
-        <Container fixed="top" inverted>
-          {component}
-        </Container>
-      );
-    case "footer":
-      return <Container>{component}</Container>;
-    /** SEGMENT BY DEFAULT */
-    default:
-      return <Container>{component}</Container>;
-  }
+const LayoutLogic: any = {
+  [LayoutItemType.SideBar]: (component: any) => (
+    <Fragment>{component}</Fragment>
+  ),
+  [LayoutItemType.SectionAbout]: (component: any) => (
+    <Fragment>{component}</Fragment>
+  ),
+  [LayoutItemType.SectionFeature]: (component: any) => (
+    <Fragment>{component}</Fragment>
+  ),
+  [LayoutItemType.SectionDownload]: (component: any) => (
+    <Fragment>{component}</Fragment>
+  ),
+  [LayoutItemType.SectionPricing]: (component: any) => (
+    <Fragment>{component}</Fragment>
+  ),
+  [LayoutItemType.SectionLatestNews]: (component: any) => (
+    <Fragment>{component}</Fragment>
+  ),
+  [LayoutItemType.Form]: (component: any) => <Fragment>{component}</Fragment>,
 };
 
+const MobileLayoutSegment = ({ type, component }: KaoComponent) =>
+  LayoutLogic[type] ? (
+    LayoutLogic[type](component)
+  ) : (
+    <Fragment>{component}</Fragment>
+  );
 /**
  * Stack Layout
  */
@@ -32,8 +44,8 @@ const LayoutSegment = (componentObject: any) => {
 const MobileLayout = ({ components }: any) => {
   return (
     <Fragment>
-      {components.map((component: any, index: number) => (
-        <LayoutSegment key={index} {...component}></LayoutSegment>
+      {components.map((component: any) => (
+        <MobileLayoutSegment {...component} />
       ))}
     </Fragment>
   );
