@@ -1,11 +1,12 @@
-import React from 'react';
-import Styled from 'styled-components';
-import { Grid } from '@material-ui/core';
+import React from "react";
+import Styled from "styled-components";
+// import { Grid } from '@material-ui/core';
+import { Grid } from "semantic-ui-react";
 
 interface Props {
-    title: string,
-    detail: string,
-    imageUrl: string
+  title: string;
+  detail: string;
+  imageUrl: string;
 }
 
 const Wrapper = Styled.div`
@@ -58,18 +59,20 @@ const Information = Styled.p`
 `;
 
 const InfoComponent = (props: Props) => {
-    return (
-        <Wrapper style={{
-            backgroundImage: `url(${props.imageUrl})`
-        }}>
-            <ContentWrap>
-                <Grid item spacing={5} md={8}>
-                    <Heading>{props.title}</Heading>
-                    <Information>{props.detail}</Information>
-                </Grid>
-            </ContentWrap>
-        </Wrapper>
-    );
-}
+  return (
+    <Wrapper
+      style={{
+        backgroundImage: `url(${props.imageUrl})`,
+      }}
+    >
+      <ContentWrap>
+        <Grid item spacing={5} md={8}>
+          <Heading>{props.title}</Heading>
+          <Information>{props.detail}</Information>
+        </Grid>
+      </ContentWrap>
+    </Wrapper>
+  );
+};
 
 export default InfoComponent;
