@@ -1,17 +1,16 @@
 import React from "react";
 import FormInput from "../Form-input/Form-input";
-import ButtonComponent from '../Button';
-import InfoComponent from '../InfoComponent/InfoComponent';
+import ButtonComponent from "../Button";
+import InfoComponent from "../InfoComponent/InfoComponent";
 
-import Styled from 'styled-components';
-import { Grid } from '@material-ui/core';
-
-
+import Styled from "styled-components";
+import { Grid } from "semantic-ui-react";
+// import { Grid } from '@material-ui/core';
 
 type iState = {
   email: string;
   password: string;
-}
+};
 
 const Wrapper = Styled.div`
   padding: 0 3rem;
@@ -46,8 +45,6 @@ const Label = Styled.label`
 `;
 const ATag = Styled.a``;
 
-
-
 class Login extends React.Component<any, iState> {
   state: iState = {
     email: "",
@@ -56,77 +53,78 @@ class Login extends React.Component<any, iState> {
 
   handleChange = (event: any) => {
     const { value } = event.target;
-    this.setState({ 'email': value });
+    this.setState({ email: value });
   };
-   loginDetail = {
+  loginDetail = {
     title: "Welcome Back !",
-    imageUrl: 'img/hero-bg-1.jpg',
-    detail: "Keep your face always toward the sunshine - and shadows will fall behind you. Continually pursue fully researched niches whereas timely platforms. Credibly parallel task optimal catalysts for change after focused catalysts for change."
-};
+    imageUrl: "img/hero-bg-1.jpg",
+    detail:
+      "Keep your face always toward the sunshine - and shadows will fall behind you. Continually pursue fully researched niches whereas timely platforms. Credibly parallel task optimal catalysts for change after focused catalysts for change.",
+  };
 
   render() {
     const { email, password } = this.state;
     return (
       <Grid container spacing={3}>
-                <Grid item md={8} xs sm>
-                    <InfoComponent
-                        title={this.loginDetail.title}
-                        detail={this.loginDetail.detail}
-                        imageUrl={this.loginDetail.imageUrl} />
+        <Grid item md={8} xs sm>
+          <InfoComponent
+            title={this.loginDetail.title}
+            detail={this.loginDetail.detail}
+            imageUrl={this.loginDetail.imageUrl}
+          />
+        </Grid>
+        <Grid item md={4} xs={12}>
+          <Wrapper>
+            <Header>
+              <Heading>Sign In</Heading>
+              <Information>Free access to our dashboard.</Information>
+            </Header>
+            <Form>
+              <FormGroup>
+                <FormInput
+                  name="email"
+                  type="text"
+                  handleChange={this.handleChange}
+                  value={email}
+                  label="Email"
+                  minLength="3"
+                  icon="envelope outline"
+                  placeholder="name@yourdomain.com"
+                  required
+                />
+              </FormGroup>
+              <FormGroup>
+                <Grid container spacing={3}>
+                  <Grid item md={6} sm xs>
+                    <Label>Password</Label>
+                  </Grid>
+                  <Grid item md={6} sm xs style={{ textAlign: "right" }}>
+                    <ATag href="/">Forgot password?</ATag>
+                  </Grid>
                 </Grid>
-                <Grid item md={4} xs={12}>
-                <Wrapper>
-        <Header>
-          <Heading>Sign In</Heading>
-          <Information>Free access to our dashboard.</Information>
-        </Header>
-        <Form>
-          <FormGroup>
-            <FormInput
-              name="email"
-              type="text"
-              handleChange={this.handleChange}
-              value={email}
-              label="Email"
-              minLength="3"
-              icon="envelope outline"
-              placeholder="name@yourdomain.com"
-              required
-            />
-          </FormGroup>
-          <FormGroup>
-            <Grid container spacing={3}>
-              <Grid item md={6} sm xs>
-                <Label>Password</Label>
-              </Grid>
-              <Grid item md={6} sm xs style={{textAlign: 'right'}}>
-                <ATag href="/">Forgot password?</ATag>
-              </Grid>
-            </Grid>
 
-            <FormInput
-              name="password"
-              type="password"
-              handleChange={this.handleChange}
-              value={password}
-              label=""
-              minLength="3"
-              icon="unlock alternate"
-              placeholder="Enter your password"
-              required
-            />
-          </FormGroup>
-          <ButtonComponent classType="signin" buttonName="Sign in" />
-            <Information>
-              <SmallInfo>
+                <FormInput
+                  name="password"
+                  type="password"
+                  handleChange={this.handleChange}
+                  value={password}
+                  label=""
+                  minLength="3"
+                  icon="unlock alternate"
+                  placeholder="Enter your password"
+                  required
+                />
+              </FormGroup>
+              <ButtonComponent classType="signin" buttonName="Sign in" />
+              <Information>
+                <SmallInfo>
                   Don't have an account yet? <ATag href="/">Sign up</ATag>.
-              </SmallInfo>
-            </Information>
-        </Form>
-      </Wrapper>
-                </Grid>
-            </Grid>
-      
+                </SmallInfo>
+              </Information>
+            </Form>
+          </Wrapper>
+        </Grid>
+      </Grid>
     );
   }
 }
