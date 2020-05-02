@@ -1,6 +1,6 @@
 import * as React from "react";
 import "./App.css";
-import Home from "../Page/Home";
+import Home, { homeComponents } from "../Page/Home";
 import SignInAndSignUp from "../Page/sign-in-and-sign-up/sign-in-and-sign-up";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import MenuContainer from "Components/Shared/Navbar/MenuContainer";
@@ -8,6 +8,7 @@ import MenuContainer from "Components/Shared/Navbar/MenuContainer";
 type iState = {
   visible: boolean;
 };
+
 class App extends React.Component<any, iState> {
   state: iState = { visible: false };
 
@@ -18,7 +19,7 @@ class App extends React.Component<any, iState> {
   public render() {
     return (
       <Router>
-        <MenuContainer />
+        <MenuContainer {...homeComponents} />
         <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/signin" component={SignInAndSignUp} />

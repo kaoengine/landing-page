@@ -14,17 +14,12 @@ import DownloadSection from "Components/Section/DownloadSection";
 import { BrowserView, MobileView } from "react-device-detect";
 import DesktopStackLayout from "../Layout/desktop-stack.layout";
 import MobileLayout from "Layout/mobile-sm.layout";
-import MenuContainer from "Components/Shared/Navbar/MenuContainer";
 
 /**
  * As clean process data 1st is define on component as []
  * then when data is bigger we can split out as module.
  */
-const homeComponents: Array<KaoComponent> = [
-  // {
-  //   type: LayoutItemType.Nav,
-  //   component: <MenuContainer />,
-  // },
+export const homeComponents: Array<KaoComponent> = [
   {
     type: LayoutItemType.Section,
     component: <HeroSection />,
