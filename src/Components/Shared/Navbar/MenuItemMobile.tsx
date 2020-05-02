@@ -1,13 +1,7 @@
 import React from "react";
-import {
-  Icon,
-  Menu,
-  Segment,
-  Sidebar,
-  Container,
-  Responsive,
-} from "semantic-ui-react";
+import { Icon, Sidebar } from "semantic-ui-react";
 import Logo from "../Logo/Logo";
+import styled, { css } from "styled-components";
 
 const NavbarItems = [
   { name: "Home", link: "/" },
@@ -31,56 +25,92 @@ const NavbarItems = [
 type iState = {
   visible: boolean;
 };
-class MenuItemMobile extends React.Component<any, iState> {
-  state: any = { visible: true };
 
-  public handleSidebarHide = () => {
-    this.setState({ visible: false });
-  };
+const WrapperContainer = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: linear-gradient(#6610f2, #6610f2);
+  z-index: 1;
+`;
+const Wrapper = styled.div`
+  position: fixed;
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: space-around;
+  top: 0;
+  left: 0;
+  background: linear-gradient(#6610f2, #6610f2);
+  color: #ddd;
+`;
+const WrapperUl: any = styled.ul`
+  position: fixed;
+  height: auto;
+  width: 100%;
+  background: #6610f2;
+  list-style: none;
+  margin: 45px 0;
+  z-index: 1;
+  ${(props: any) =>
+    props.close &&
+    css`
+      display: none;
+    `}
+`;
+
+const WrapperLi = styled.li``;
+
+const WrapperA: any = styled.a`
+  display: block;
+  list-style: none;
+  color: #fff;
+  margin-top: 2.5em;
+  transition: 0.2s;
+  opacity: 0.8;
+  font-size: 1rem;
+  &:hover {
+    color: #ffc107;
+    cursor: pointer;
+  }
+`;
+
+const WrapperIcon = styled.div`
+  align-self: center;
+`;
+class MenuItemMobile extends React.Component<any, iState> {
+  state: any = { visible: false };
+
   public handleToggle = () => {
-    this.setState({ visible: true });
+    this.setState({ visible: !this.state.visible });
   };
   render() {
-    const { visible } = this.state;
     return (
-      <Responsive as={Sidebar.Pushable}>
-        <Sidebar
-          as={Menu}
-          animation="push"
-          inverted
-          onHide={() => this.handleSidebarHide()}
-          visible={visible}
-          vertical
-          width="thin"
-        >
-          {NavbarItems.map((NavbarItem) => {
-            return <Menu.Item as="a">{NavbarItem.name}</Menu.Item>;
-          })}
-        </Sidebar>
-        <Sidebar.Pusher dimmed={visible}>
-          <Segment
-            inverted
-            textAlign="center"
-            style={{ minHeight: 350, padding: "1em 0em" }}
-            vertical
-          >
-            <Container>
-              <Menu inverted pointing secondary size="large">
-                <Menu.Item as="a" inverted position="left">
-                  <Logo />
-                </Menu.Item>
-                <Menu.Item
-                  as="a"
-                  onClick={() => this.handleToggle()}
-                  style={{ alignSelf: "auto" }}
-                >
-                  <Icon name="sidebar" />
-                </Menu.Item>
-              </Menu>
-            </Container>
-          </Segment>
-        </Sidebar.Pusher>
-      </Responsive>
+      <WrapperContainer>
+        <Wrapper>
+          <Logo />
+          <WrapperIcon>
+            <Icon
+              name="sidebar"
+              onClick={() => this.handleToggle()}
+              style={{ transition: "all 3s ease-in-out" }}
+            />
+          </WrapperIcon>
+        </Wrapper>
+        {this.state.visible ? (
+          <WrapperUl>
+            {NavbarItems.map((NavbarItem) => {
+              return (
+                <WrapperLi>
+                  <WrapperA href={NavbarItem.link}>{NavbarItem.name}</WrapperA>
+                </WrapperLi>
+              );
+            })}
+          </WrapperUl>
+        ) : (
+          <WrapperUl close></WrapperUl>
+        )}
+      </WrapperContainer>
     );
   }
 }
