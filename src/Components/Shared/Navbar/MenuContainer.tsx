@@ -11,7 +11,7 @@ class MenuContainer extends React.Component {
           <MenuItemDesktop />
         </BrowserView>
         <MobileView>
-          <MenuItemMobile />
+          <MenuItemMobile components={this.props} />
         </MobileView>
       </Fragment>
     );
