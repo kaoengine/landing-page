@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Grid, Header, List } from "semantic-ui-react";
+import { Grid, List } from "semantic-ui-react";
 import SectionVerbal from "../../Shared/SectionVerbal";
 
 class DescriptionContact extends React.Component {
