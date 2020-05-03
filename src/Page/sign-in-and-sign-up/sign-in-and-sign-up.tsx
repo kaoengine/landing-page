@@ -1,10 +1,6 @@
 import React from "react";
-import InfoComponent from "../../Components/Shared/InfoComponent/InfoComponent";
 import Login from "../../Components/Shared/Login/Login";
-
 import Styled from "styled-components";
-// import { Grid } from '@material-ui/core';
-import { Grid } from "semantic-ui-react";
 
 const Wrapper = Styled.div`
     background: #f4f7fa;

@@ -29,7 +29,7 @@ top: 0;
 bottom: 0;
 left: 0;
     && i {
-        padding: 10px 15px;
+        padding: calc(1rem + 2px);
         border-left: 2px solid #6730e3;
         position: absolute;
         font-size: 18px;

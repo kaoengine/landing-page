@@ -1,6 +1,5 @@
 import React from "react";
 import Styled from "styled-components";
-// import { Grid } from '@material-ui/core';
 import { Grid } from "semantic-ui-react";
 
 interface Props {
@@ -10,14 +9,15 @@ interface Props {
 }
 
 const Wrapper = Styled.div`
-        position: relative;
-        width: 100%;
-        display: block;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        // position: relative;
+        // width: 100%;
+        // display: block;
+        // display: flex;
+        // justify-content: center;
+        // align-items: center;
         @media (min-width: 786px) {
             height: 100vh!important;
+            padding: 5em 5em;
         }
         @media (max-width: 786px) {
             padding: 2em 1em;
@@ -66,10 +66,10 @@ const InfoComponent = (props: Props) => {
       }}
     >
       <ContentWrap>
-        <Grid item spacing={5} md={8}>
+      <Grid.Row centered columns={4}>
           <Heading>{props.title}</Heading>
           <Information>{props.detail}</Information>
-        </Grid>
+        </Grid.Row >
       </ContentWrap>
     </Wrapper>
   );

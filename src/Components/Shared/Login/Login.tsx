@@ -5,7 +5,6 @@ import InfoComponent from "../InfoComponent/InfoComponent";
 
 import Styled from "styled-components";
 import { Grid } from "semantic-ui-react";
-// import { Grid } from '@material-ui/core';
 
 type iState = {
   email: string;
@@ -65,15 +64,15 @@ class Login extends React.Component<any, iState> {
   render() {
     const { email, password } = this.state;
     return (
-      <Grid container spacing={3}>
-        <Grid item md={8} xs sm>
+      <Grid stackable columns='equal'>
+        <Grid.Column padded="horizontally" centered verticalAlign='middle' width={11}>
           <InfoComponent
             title={this.loginDetail.title}
             detail={this.loginDetail.detail}
             imageUrl={this.loginDetail.imageUrl}
           />
-        </Grid>
-        <Grid item md={4} xs={12}>
+        </Grid.Column>
+        <Grid.Column width={5} verticalAlign='middle'>
           <Wrapper>
             <Header>
               <Heading>Sign In</Heading>
@@ -115,7 +114,11 @@ class Login extends React.Component<any, iState> {
                   required
                 />
               </FormGroup>
+              <Grid.Row>
+              <Grid.Column width={16}>
               <ButtonComponent classType="signin" buttonName="Sign in" />
+              </Grid.Column>
+              </Grid.Row>
               <Information>
                 <SmallInfo>
                   Don't have an account yet? <ATag href="/">Sign up</ATag>.
@@ -123,7 +126,7 @@ class Login extends React.Component<any, iState> {
               </Information>
             </Form>
           </Wrapper>
-        </Grid>
+        </Grid.Column>
       </Grid>
     );
   }
