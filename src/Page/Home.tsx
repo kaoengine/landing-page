@@ -1,5 +1,4 @@
 import React, { Fragment } from "react";
-import MenuItem from "../Components/Shared/Navbar/MenuItemDesktop";
 import SectionAbout from "../Components/Section/SectionAbout/SectionAbout";
 import SectionFeatures from "../Components/Section/SectionFeatures/SectionFeatures";
 import PricingComponent from "../Components/Section/PricingComponent/PricingComponent";
