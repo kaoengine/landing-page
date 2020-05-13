@@ -69,14 +69,21 @@ const WrapperA: any = styled.a`
   transition: 0.2s;
   opacity: 0.8;
   font-size: 1rem;
-  &:hover {
-    color: #ffc107;
-    cursor: pointer;
+  :hover {
+    color: #ddd;
+    padding: 1em;
+    transition: all 0.3s fill;
   }
 `;
 
 const WrapperIcon = styled.div`
   align-self: center;
+  font-size: 18px;
+  line-height: 1.75;
+  :hover {
+    color: #fff;
+    transition: color 3s fill;
+  }
 `;
 class MenuItemMobile extends React.Component<any, iState> {
   state: any = { visible: false };
@@ -93,7 +100,7 @@ class MenuItemMobile extends React.Component<any, iState> {
             <Icon
               name="sidebar"
               onClick={() => this.handleToggle()}
-              style={{ transition: "all 3s ease-in-out" }}
+              size="large"
             />
           </WrapperIcon>
         </Wrapper>
