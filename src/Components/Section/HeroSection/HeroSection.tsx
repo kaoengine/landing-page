@@ -8,6 +8,12 @@ import { Grid, Container, Input, Button as _Button } from "semantic-ui-react";
 import styled from "styled-components";
 import Button from "../../Shared/Button";
 
+//import connect component from react-redux
+import { connect } from "react-redux";
+
+//import FetchAPi action
+import { FetchApi } from "../../../Actions";
+
 const Wrapper = styled.div`
   background: url("/img/footer-bg.png");
   background-repeat: no-repeat;
@@ -45,9 +51,14 @@ export const InputWapper = styled.div`
     }
   }
 `;
-
-class HeroSection extends React.Component {
+interface IProps {
+  FetchApi: any;
+  API: any;
+}
+class HeroSection extends React.Component<IProps> {
   render() {
+    const { loading, url, error, id } = this.props.API;
+    console.log(loading);
     return (
       <Wrapper>
         <Container>
@@ -83,11 +94,24 @@ class HeroSection extends React.Component {
                 </Grid.Row>
                 <Grid.Row columns={2}>
                   <Grid.Column width={2}>
-                    <_Button circular icon="play" />
+                    <_Button
+                      circular
+                      icon="play"
+                      onClick={() => this.props.FetchApi()}
+                    />
                   </Grid.Column>
                   <Grid.Column width={14} verticalAlign="middle">
                     <Tile content={"Watch Video Overview."} />
                   </Grid.Column>
+                  <Grid.Row>
+                    {loading ? (
+                      <p>Loading...</p>
+                    ) : error ? (
+                      <p>Error Mat!</p>
+                    ) : (
+                      <img src={url} alt="API" />
+                    )}
+                  </Grid.Row>
                 </Grid.Row>
               </Grid>
             </Grid.Column>
@@ -103,4 +127,10 @@ class HeroSection extends React.Component {
   }
 }
 
-export default HeroSection;
+const mapStateToProps = (state: any) => {
+  return {
+    API: state.API,
+    FetchApi: state.FetchApi,
+  };
+};
+export default connect(mapStateToProps, { FetchApi })(HeroSection);
