@@ -9,7 +9,7 @@ import * as _ from "lodash";
  * @author [Khanh Tran](https://github.com/khanhtran8)
  */
 const layoutLogic: any = {
-  [LayoutItemType.Nav]: (component: any) => <Sticky>{component}</Sticky>,
+  // [LayoutItemType.Nav]: (component: any) => <Sticky>{component}</Sticky>,
   [LayoutItemType.SectionAbout]: (component: any) => (
     <Fragment>{component}</Fragment>
   ),
@@ -28,7 +28,7 @@ const layoutLogic: any = {
   [LayoutItemType.Form]: (component: any) => <Fragment>{component}</Fragment>,
 };
 const LayoutSegment = ({ type, component }: KaoComponent) =>
-  _.get(layoutLogic, type, layoutLogic.Form)(component);
+  _.get(layoutLogic, type, layoutLogic.SectionAbout)(component);
 
 // const LayoutSegmentStupid = ({type, component}: KaoComponent) => {
 
