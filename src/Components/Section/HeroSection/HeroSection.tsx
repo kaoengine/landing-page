@@ -6,13 +6,12 @@ import ImageProduct from "../../Shared/Image";
 
 import { Grid, Container, Input, Button as _Button } from "semantic-ui-react";
 import styled from "styled-components";
-import Button from "../../Shared/Button";
 
 //import connect component from react-redux
 import { connect } from "react-redux";
 
 //import FetchAPi action
-import { FetchApi } from "../../../Actions";
+import { FetchApi, AddInfo } from "../../../Actions";
 
 const Wrapper = styled.div`
   background: url("/img/footer-bg.png");
@@ -54,11 +53,45 @@ export const InputWapper = styled.div`
 interface IProps {
   FetchApi: any;
   API: any;
+  AddInfo: any;
 }
 class HeroSection extends React.Component<IProps> {
+  state: any = { email: "" };
+
+  onHandleSubmit = (event: any) => {
+    event.preventDefault();
+    this.props.AddInfo(this.state.email);
+    this.setState({ email: "" });
+  };
+
+  onHandleChange = (event: any) => {
+    this.setState({ email: event.target.value });
+  };
+
+  componentDidMount() {
+    console.log("componentDidMount");
+
+    const emailAddress = JSON.parse(localStorage.getItem("email") as any);
+    if (localStorage.getItem("email")) {
+      this.setState({
+        email: emailAddress.email,
+      });
+    } else {
+      this.setState({ email: "" });
+    }
+  }
+
+  componentDidUpdate(prevProps: any, prevState: any) {
+    console.log("ComponentDidUpdate");
+
+    console.log("prevProps", prevProps);
+    console.log("prevState", prevState);
+    localStorage.setItem("email", JSON.stringify(prevState));
+  }
   render() {
+    console.log("Render");
+
     const { loading, url, error, id } = this.props.API;
-    console.log(loading);
     return (
       <Wrapper>
         <Container>
@@ -77,19 +110,18 @@ class HeroSection extends React.Component<IProps> {
                 </Grid.Row>
                 <Grid.Row>
                   <Grid.Column>
-                    <InputWapper>
-                      <Input
-                        type="text"
-                        placeholder="info@yourdomain.com"
-                        action
-                      >
-                        <input />
-                        <Button
-                          className="btn btn-lg btn-block solid-btn border-radius mt-4 mb-3"
-                          buttonName="Subscribe"
+                    <form onSubmit={this.onHandleSubmit}>
+                      <InputWapper>
+                        <Input
+                          type="text"
+                          placeholder="info@yourdomain.com"
+                          action="subscribe"
+                          value={this.state.email}
+                          onChange={this.onHandleChange}
                         />
-                      </Input>
-                    </InputWapper>
+                        {/* <input /> */}
+                      </InputWapper>
+                    </form>
                   </Grid.Column>
                 </Grid.Row>
                 <Grid.Row columns={2}>
@@ -130,7 +162,8 @@ class HeroSection extends React.Component<IProps> {
 const mapStateToProps = (state: any) => {
   return {
     API: state.API,
+    AddInfo: state.AddInfo,
     FetchApi: state.FetchApi,
   };
 };
-export default connect(mapStateToProps, { FetchApi })(HeroSection);
+export default connect(mapStateToProps, { FetchApi, AddInfo })(HeroSection);
