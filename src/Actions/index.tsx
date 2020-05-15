@@ -23,3 +23,10 @@ export const RequestAPIFailed = () => {
     type: "REQUESTED_API_FAILED",
   };
 };
+
+export const AddInfo = (data: any) => {
+  return {
+    type: "ADD_INFO",
+    data,
+  };
+};
