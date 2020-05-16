@@ -11,7 +11,8 @@ import styled from "styled-components";
 import { connect } from "react-redux";
 
 //import FetchAPi action
-import { FetchApi, AddInfo } from "../../../Actions";
+import { FetchVideo, AddInfo } from "../../../Actions";
+import PopUp from "./PopUp";
 
 const Wrapper = styled.div`
   background: url("/img/footer-bg.png");
@@ -51,7 +52,7 @@ export const InputWapper = styled.div`
   }
 `;
 interface IProps {
-  FetchApi: any;
+  FetchVideo: any;
   API: any;
   AddInfo: any;
 }
@@ -69,8 +70,6 @@ class HeroSection extends React.Component<IProps> {
   };
 
   componentDidMount() {
-    console.log("componentDidMount");
-
     const emailAddress = JSON.parse(localStorage.getItem("email") as any);
     if (localStorage.getItem("email")) {
       this.setState({
@@ -82,16 +81,10 @@ class HeroSection extends React.Component<IProps> {
   }
 
   componentDidUpdate(prevProps: any, prevState: any) {
-    console.log("ComponentDidUpdate");
-
-    console.log("prevProps", prevProps);
-    console.log("prevState", prevState);
     localStorage.setItem("email", JSON.stringify(prevState));
   }
   render() {
-    console.log("Render");
-
-    const { loading, url, error, id } = this.props.API;
+    const { url, isDisplay } = this.props.API;
     return (
       <Wrapper>
         <Container>
@@ -129,20 +122,16 @@ class HeroSection extends React.Component<IProps> {
                     <_Button
                       circular
                       icon="play"
-                      onClick={() => this.props.FetchApi()}
+                      onClick={() => this.props.FetchVideo(isDisplay)}
                     />
                   </Grid.Column>
                   <Grid.Column width={14} verticalAlign="middle">
                     <Tile content={"Watch Video Overview."} />
                   </Grid.Column>
                   <Grid.Row>
-                    {loading ? (
-                      <p>Loading...</p>
-                    ) : error ? (
-                      <p>Error Mat!</p>
-                    ) : (
-                      <img src={url} alt="API" />
-                    )}
+                    {isDisplay ? (
+                      <PopUp url={url} isDisplay={isDisplay} />
+                    ) : null}
                   </Grid.Row>
                 </Grid.Row>
               </Grid>
@@ -163,7 +152,7 @@ const mapStateToProps = (state: any) => {
   return {
     API: state.API,
     AddInfo: state.AddInfo,
-    FetchApi: state.FetchApi,
+    FetchVideo: state.FetchVideo,
   };
 };
-export default connect(mapStateToProps, { FetchApi, AddInfo })(HeroSection);
+export default connect(mapStateToProps, { FetchVideo, AddInfo })(HeroSection);
