@@ -1,5 +1,13 @@
-const API = (state = { loading: true }, action: any) => {
+const initialState = { isDisplay: false };
+
+const API = (state = initialState, action: any) => {
   switch (action.type) {
+    case "FETCH_VIDEO":
+      return {
+        ...state,
+        isDisplay: !action.isDisplay,
+        url: "https://www.youtube.com/embed/tgbNymZ7vqY",
+      };
     case "FETCH_API":
       return { ...state, loading: true };
 
@@ -19,7 +27,7 @@ const API = (state = { loading: true }, action: any) => {
       return { ...state, loading: false, error: true };
 
     default:
-      return state;
+      return { ...state };
   }
 };
 export default API;
