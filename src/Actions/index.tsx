@@ -30,3 +30,10 @@ export const AddInfo = (data: any) => {
     data,
   };
 };
+
+export const FetchVideo = (isDisplay: any) => {
+  return {
+    type: "FETCH_VIDEO",
+    isDisplay,
+  };
+};
