@@ -13,6 +13,7 @@ interface iState {
   className?: string;
   Icons?: Icons;
   classType?: string;
+  onHandleClick?: any;
 }
 
 const Wrapper = styled.div`
@@ -57,11 +58,13 @@ const StyledButton: any = styled.button`
 `;
 class Button extends React.Component<iState> {
   render() {
-    const { buttonName, Icons } = this.props;
+    const { buttonName, Icons, onHandleClick } = this.props;
     return (
       <Wrapper>
         <StyledButton>
-          <Icon name={Icons}>{buttonName}</Icon>
+          <Icon name={Icons} onClick={() => onHandleClick()}>
+            {buttonName}
+          </Icon>
         </StyledButton>
       </Wrapper>
     );
