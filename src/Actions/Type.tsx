@@ -1,0 +1,8 @@
+export const FETCH_API = "FETCH_API";
+export const REQUESTED_API = "REQUESTED_API";
+export const REQUESTED_API_SUCCEEDED = "REQUESTED_API_SUCCEEDED";
+export const REQUESTED_API_FAILED = "REQUESTED_API_FAILED";
+export const ADD_INFO = "ADD_INFO";
+export const FETCH_VIDEO = "FETCH_VIDEO";
+export const ADD_CONTACT = "ADD_CONTACT";
+export const PURCHASE_BY_ID = "PURCHASE_BY_ID";
