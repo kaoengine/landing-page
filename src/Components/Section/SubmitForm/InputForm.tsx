@@ -50,7 +50,6 @@ class InputForm extends React.Component<IProps> {
 
   componentDidUpdate(prevProps: any, prevState: any) {
     const object = prevState;
-    console.log(object);
     localStorage.setItem("customerContact", JSON.stringify(object));
   }
   changeHandler = (event: any) => {

@@ -3,6 +3,8 @@ import { Card, Image, List, Container } from "semantic-ui-react";
 import "./CardWithPurchaseButton.css";
 import Button from "../Button";
 import styled from "styled-components";
+import { PurchaseById } from "../../../Actions";
+import { connect } from "react-redux";
 
 const Wrapper = styled.div`
   text-align: center;
@@ -23,7 +25,11 @@ const WrapperMeta = styled.div`
 const WrapperListItem = styled.div`
   padding-bottom: 1.2em;
 `;
-export default class CardFancy extends React.Component {
+
+interface IState {
+  PurchaseById: any;
+}
+class CardFancy extends React.Component<IState> {
   public render() {
     return (
       <Wrapper>
@@ -62,7 +68,10 @@ export default class CardFancy extends React.Component {
               </Card.Content>
               <Card.Content extra>
                 <WrapperListItem>
-                  <Button buttonName={"Purchase now"} />
+                  <Button
+                    buttonName={"Purchase now"}
+                    onHandleClick={() => this.props.PurchaseById()}
+                  />
                 </WrapperListItem>
               </Card.Content>
             </Card.Content>
@@ -72,3 +81,12 @@ export default class CardFancy extends React.Component {
     );
   }
 }
+
+const mapStateToProps = (state: any) => {
+  return {
+    state,
+    PurchaseById,
+  };
+};
+
+export default connect(mapStateToProps, { PurchaseById })(CardFancy);
