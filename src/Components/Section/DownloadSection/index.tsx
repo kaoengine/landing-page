@@ -3,10 +3,12 @@ import SectionVerbal from "../../Shared/SectionVerbal";
 import { Tile } from "../../Shared/Tiles/index";
 import ImageProduct from "../../Shared/Image";
 import Button, { Icons } from "../../Shared/Button";
-import { Grid, Container } from "semantic-ui-react";
+import { Grid } from "semantic-ui-react";
 
 import styled from "styled-components";
 import { Color } from "Components/Shared/Badget";
+import { connect } from "react-redux";
+import { PurchaseById } from "../../../Actions";
 
 const Wrapper = styled.div`
   background: url(img/app-hero-bg.jpg) no-repeat center center / cover;
@@ -45,7 +47,11 @@ const ImageWrapper = styled.div`
   height: auto;
   margin: 0 auto;
 `;
-class DownloadSection extends React.Component {
+
+interface IProps {
+  onHandleClick: any;
+}
+class DownloadSection extends React.Component<IProps> {
   render() {
     return (
       <Wrapper>
@@ -68,8 +74,13 @@ class DownloadSection extends React.Component {
                   <Button
                     buttonName="Play Store"
                     Icons={Icons.Android}
+                    onHandleClick={() => this.props.onHandleClick()}
                   ></Button>
-                  <Button buttonName="App Store" Icons={Icons.Apple}></Button>
+                  <Button
+                    buttonName="App Store"
+                    Icons={Icons.Apple}
+                    onHandleClick={() => this.props.onHandleClick()}
+                  ></Button>
                 </WrapperButtonMargin>
               </Grid.Row>
             </Grid.Column>
@@ -85,4 +96,16 @@ class DownloadSection extends React.Component {
   }
 }
 
-export default DownloadSection;
+const mapStateToProps = (state: any) => {
+  return {
+    state,
+  };
+};
+
+const mapDispatchToProps = (dispatch: any) => {
+  return {
+    onHandleClick: () => dispatch(PurchaseById()),
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(DownloadSection);
