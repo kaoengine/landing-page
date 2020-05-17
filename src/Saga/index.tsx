@@ -1,10 +1,16 @@
 import { takeEvery, put, call } from "redux-saga/effects";
-
+import { FETCH_API, PURCHASE_BY_ID } from "../Actions/Type";
 // import actions:
-import { RequestedAPI, RequestAPISuccess, RequestAPIFailed } from "../Actions/";
+import {
+  RequestedAPI,
+  RequestAPISuccess,
+  RequestAPIFailed,
+  PurchaseById,
+} from "../Actions/";
 
 export function* watchFetchAPI() {
-  yield takeEvery("FETCH_API", fetchAPIAsync);
+  yield takeEvery(FETCH_API, fetchAPIAsync);
+  yield takeEvery(PURCHASE_BY_ID, PurchaseButtonAsync);
 }
 
 function* fetchAPIAsync() {
@@ -19,4 +25,8 @@ function* fetchAPIAsync() {
   } catch (error) {
     yield put(RequestAPIFailed());
   }
+}
+
+function* PurchaseButtonAsync() {
+  yield put({ type: "PURCHASE_BY_ID_ASYNC", value: 1 });
 }
