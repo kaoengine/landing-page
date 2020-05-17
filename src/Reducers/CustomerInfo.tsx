@@ -1,7 +1,8 @@
-const CustomerInfo = (state = { emailSubcribe: "" }, action: any) => {
+let initialState = [{ email: [] }];
+const CustomerInfo = (state = initialState, action: any) => {
   switch (action.type) {
     case "ADD_INFO":
-      return { ...state, emailSubribe: action.data };
+      return [...state, { email: action.data }];
 
     default:
       return state;
