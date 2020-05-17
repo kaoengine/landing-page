@@ -37,3 +37,20 @@ export const FetchVideo = (isDisplay: any) => {
     isDisplay,
   };
 };
+
+export const AddContact = (
+  name: any,
+  email: any,
+  phone: any,
+  company: any,
+  message: any
+) => {
+  return {
+    type: "ADD_CONTACT",
+    name,
+    email,
+    phone,
+    company,
+    message,
+  };
+};
