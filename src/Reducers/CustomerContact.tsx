@@ -1,8 +1,9 @@
+import { ADD_CONTACT } from "../Actions/Type";
 let initialState = [{}];
 
 const CustomerContact = (state = initialState, action: any) => {
   switch (action.type) {
-    case "ADD_CONTACT":
+    case ADD_CONTACT:
       return [
         ...state,
         {
