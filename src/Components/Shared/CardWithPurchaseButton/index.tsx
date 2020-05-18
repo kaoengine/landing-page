@@ -5,6 +5,7 @@ import Button from "../Button";
 import styled from "styled-components";
 import { PurchaseById } from "../../../Actions";
 import { connect } from "react-redux";
+import { Link } from "react-router-dom";
 
 const Wrapper = styled.div`
   text-align: center;
@@ -27,7 +28,7 @@ const WrapperListItem = styled.div`
 `;
 
 interface IState {
-  PurchaseById: any;
+  onHandleClick: any;
 }
 class CardFancy extends React.Component<IState> {
   public render() {
@@ -68,10 +69,12 @@ class CardFancy extends React.Component<IState> {
               </Card.Content>
               <Card.Content extra>
                 <WrapperListItem>
-                  <Button
-                    buttonName={"Purchase now"}
-                    onHandleClick={() => this.props.PurchaseById()}
-                  />
+                  <Link to="/purchase">
+                    <Button
+                      buttonName={"Purchase now"}
+                      onHandleClick={this.props.onHandleClick}
+                    />
+                  </Link>
                 </WrapperListItem>
               </Card.Content>
             </Card.Content>
@@ -85,8 +88,13 @@ class CardFancy extends React.Component<IState> {
 const mapStateToProps = (state: any) => {
   return {
     state,
-    PurchaseById,
   };
 };
 
-export default connect(mapStateToProps, { PurchaseById })(CardFancy);
+const mapDispatchToProps = (dispatch: any) => {
+  return {
+    onHandleClick: () => dispatch(PurchaseById()),
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(CardFancy);

@@ -1,12 +1,7 @@
 import { takeEvery, put, call } from "redux-saga/effects";
 import { FETCH_API, PURCHASE_BY_ID } from "../Actions/Type";
 // import actions:
-import {
-  RequestedAPI,
-  RequestAPISuccess,
-  RequestAPIFailed,
-  PurchaseById,
-} from "../Actions/";
+import { RequestedAPI, RequestAPISuccess, RequestAPIFailed } from "../Actions/";
 
 export function* watchFetchAPI() {
   yield takeEvery(FETCH_API, fetchAPIAsync);

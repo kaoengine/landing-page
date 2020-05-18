@@ -62,7 +62,7 @@ class Button extends React.Component<iState> {
     return (
       <Wrapper>
         <StyledButton>
-          <Icon name={Icons} onClick={() => onHandleClick()}>
+          <Icon name={Icons} onClick={onHandleClick}>
             {buttonName}
           </Icon>
         </StyledButton>
