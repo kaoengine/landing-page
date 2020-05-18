@@ -9,6 +9,7 @@ import styled from "styled-components";
 import { Color } from "Components/Shared/Badget";
 import { connect } from "react-redux";
 import { PurchaseById } from "../../../Actions";
+import { Link } from "react-router-dom";
 
 const Wrapper = styled.div`
   background: url(img/app-hero-bg.jpg) no-repeat center center / cover;
@@ -71,16 +72,20 @@ class DownloadSection extends React.Component<IProps> {
               </Grid.Row>
               <Grid.Row>
                 <WrapperButtonMargin>
-                  <Button
-                    buttonName="Play Store"
-                    Icons={Icons.Android}
-                    onHandleClick={() => this.props.onHandleClick()}
-                  ></Button>
-                  <Button
-                    buttonName="App Store"
-                    Icons={Icons.Apple}
-                    onHandleClick={() => this.props.onHandleClick()}
-                  ></Button>
+                  <Link to="/purchase">
+                    <Button
+                      buttonName="Play Store"
+                      Icons={Icons.Android}
+                      onHandleClick={this.props.onHandleClick}
+                    ></Button>
+                  </Link>
+                  <Link to="/purchase">
+                    <Button
+                      buttonName="App Store"
+                      Icons={Icons.Apple}
+                      onHandleClick={this.props.onHandleClick}
+                    ></Button>
+                  </Link>
                 </WrapperButtonMargin>
               </Grid.Row>
             </Grid.Column>
@@ -98,7 +103,7 @@ class DownloadSection extends React.Component<IProps> {
 
 const mapStateToProps = (state: any) => {
   return {
-    state,
+    id: state.PurchaseApp.id,
   };
 };
 
